@@ -71,7 +71,7 @@ const Info = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: white;
+
   @media only screen and (max-width: 480px) {
     width: 100%;
     flex-direction: column;
@@ -134,7 +134,7 @@ const Text = styled.h1`
 const Desc = styled.h1`
   font-family: "Montserrat", sans-serif;
   color: white;
-  font-size: 1rem;
+  font-size: 15px;
 `;
 
 const ArtistTemplate = ({ pageContext }) => {
@@ -156,7 +156,9 @@ const ArtistTemplate = ({ pageContext }) => {
             <Right>
               <Text>{title}</Text>
               <Desc>{description}</Desc>
+
               <Info>{info}</Info>
+
               {/* <Desc>{description}</Desc> */}
               <br></br>
               <br></br>

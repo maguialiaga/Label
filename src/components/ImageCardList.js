@@ -21,8 +21,8 @@ const CardContainer = styled.div`
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  position: relative; /* Set position to relative */
-  z-index: 1; /* Ensure the cards are in front of the background */
+  position: relative;
+  z-index: 1;
 `;
 
 const Card = styled.div`
@@ -32,10 +32,6 @@ const Card = styled.div`
   overflow: hidden;
   /* box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); */
   transition: transform 0.3s ease-in-out;
-
-  &:hover {
-    transform: scale(1.05);
-  }
 `;
 
 const CardImage = styled.img`
