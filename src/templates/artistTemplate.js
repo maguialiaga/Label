@@ -1,4 +1,5 @@
 import React from "react";
+
 import Layout from "../components/Layout";
 import NavBar from "../components/NavBar";
 import styled from "styled-components";
@@ -54,14 +55,15 @@ const Left = styled.div`
   }
 `;
 
-const Desc = styled.p`
-  width: 60%;
-  font-size: 20px;
-  margin-top: 20px;
-  @media only screen and (max-width: 480px) {
-    width: 100%;
-  }
-`;
+// const Desc = styled.p`
+//   width: 60%;
+//   background-color: white;
+//   font-size: 20px;
+//   margin-top: 20px;
+//   @media only screen and (max-width: 480px) {
+//     width: 100%;
+//   }
+// `;
 
 const Info = styled.div`
   width: 60%;
@@ -69,6 +71,7 @@ const Info = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
+  background-color: white;
   @media only screen and (max-width: 480px) {
     width: 100%;
     flex-direction: column;
@@ -78,11 +81,11 @@ const Info = styled.div`
 const Button = styled.button`
   font-family: "Roboto Mono", monospace;
   border-radius: 4px;
-  background: white;
+  background: none;
   white-space: nowrap;
   padding: 10px 20px;
   font-size: 16px;
-  color: black;
+  color: white;
   outline: none;
   border: solid white;
   cursor: pointer;
@@ -91,9 +94,9 @@ const Button = styled.button`
 
   &:hover {
     transition: 0.3s ease;
-    background-color: black;
-    border: solid black;
-    color: white;
+    background-color: white;
+    border: solid white;
+    color: black;
   }
 `;
 
@@ -113,29 +116,34 @@ const ContactText = styled.span`
 `;
 
 const Right = styled.div`
-  width: 10%;
+  margin-left: 7rem;
+  width: auto;
   height: 3vh;
   position: relative;
 
   @media only screen and (max-width: 480px) {
-    display: none;
+    display: flex;
   }
 `;
 
 const Text = styled.h1`
   font-family: "Montserrat", sans-serif;
   color: white;
-
-  /* font-size: 100px; */
+  font-size: 2rem;
+`;
+const Desc = styled.h1`
+  font-family: "Montserrat", sans-serif;
+  color: white;
+  font-size: 1rem;
 `;
 
 const ArtistTemplate = ({ pageContext }) => {
-  const { title, image } = pageContext.artist;
+  const { title, image, description, info } = pageContext.artist;
   const backgroundImage = require(`../assets/images/${image}`);
 
   return (
     <Layout>
-      <NavBar />
+      <NavBar navColor={"white"} />
       <Wrapper>
         <Gradient></Gradient>
 
@@ -147,7 +155,9 @@ const ArtistTemplate = ({ pageContext }) => {
           <Container>
             <Right>
               <Text>{title}</Text>
-              <br></br>
+              <Desc>{description}</Desc>
+              <Info>{info}</Info>
+              {/* <Desc>{description}</Desc> */}
               <br></br>
               <br></br>
               <br></br>
@@ -155,14 +165,7 @@ const ArtistTemplate = ({ pageContext }) => {
               <Button>booking request</Button>
               {/* <Title>BOOK</Title> */}
             </Right>
-            <Left>
-              <Desc></Desc>
-              <Info>
-                <Contact>
-                  <ContactText></ContactText>
-                </Contact>
-              </Info>
-            </Left>
+            <Left></Left>
           </Container>
         </Slide>
       </Wrapper>

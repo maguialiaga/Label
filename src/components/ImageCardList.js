@@ -56,6 +56,7 @@ const CardContent = styled.div`
 `;
 
 const CardTitle = styled.h3`
+  font-family: "Montserrat", sans-serif;
   margin: 0;
   display: flex;
   align-items: center;

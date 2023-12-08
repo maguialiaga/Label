@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
-import styled from "styled-components";
 import { Link } from "gatsby";
-import logo from "../assets/images/rummel-negro.png";
+import logoNegro from "../assets/images/rummel-negro.png";
+import logoBlanco from "../assets/images/rummel-blanco.png";
+import styled from "styled-components";
 import { FiMenu, FiX } from "react-icons/fi";
 import { IconContext } from "react-icons";
 
@@ -18,7 +19,7 @@ const Nav = styled.nav`
   align-items: center;
   padding-right: 100px;
   padding-left: 50px;
-
+  color: ${({ navColor }) => (navColor === "white" ? "white" : "black")};
   @media screen and (max-width: 960px) {
     padding-left: 20px;
     transition: 0.8s all ease;
@@ -34,16 +35,19 @@ const NavLogo = styled(Link)`
   align-items: center;
   z-index: 50;
   margin-left: 3rem;
+  color: ${({ navColor }) => (navColor === "white" ? "white" : "black")};
 `;
 
 const NavIcon = styled.img`
   margin-right: 0 0.5rem;
   width: 9rem;
+  color: ${({ navColor }) => (navColor === "white" ? "white" : "black")};
 `;
 
 const MobileIcon = styled.div`
   display: none;
   z-index: 50;
+  color: ${({ navColor }) => (navColor === "white" ? "white" : "black")};
   @media screen and (max-width: 960px) {
     display: block;
     position: absolute;
@@ -65,17 +69,17 @@ const NavMenu = styled.ul`
   @media screen and (max-width: 960px) {
     flex-direction: column;
     width: 100%;
-    height: 50vh;
+    height: 40vh;
     position: fixed;
-    padding-top: 30%;
+    padding-top: 20%;
     top: 0;
     left: 0;
     opacity: ${({ click }) => (click ? 1 : 0)};
     visibility: ${({ click }) => (click ? "visible" : "hidden")};
     transform: translateY(${({ click }) => (click ? "0" : "-10px")});
     transition: opacity 0.5s ease;
-    /* background-color: rgb(0, 0, 0, 0.6); */
-    background-color: rgb(255, 255, 255);
+    background-color: #787276;
+    /* background-color: rgb(255, 255, 255); */
   }
   > li:first-child {
     margin-left: auto;
@@ -95,13 +99,14 @@ const NavItem = styled.li`
 `;
 
 const NavLinks = styled(Link)`
-  color: black;
+  /* color: black; */
   display: flex;
   font-weight: 500;
   align-items: center;
   text-decoration: none;
   padding: 0.5rem 1rem;
   height: 100%;
+  color: ${({ navColor }) => (navColor === "white" ? "white" : "black")};
   &:hover {
     /* text-decoration: underline; */
     color: rgb(105, 105, 105);
@@ -134,7 +139,7 @@ const data = [
   },
 ];
 
-export default function Navbar() {
+export default function Navbar({ navColor }) {
   const [click, setClick] = useState(false);
   const [scroll, setScroll] = useState(false);
 
@@ -158,20 +163,32 @@ export default function Navbar() {
     window.addEventListener("scroll", changeNav);
   }, []);
 
+  const logoSrc = navColor === "white" ? logoBlanco : logoNegro;
+
   return (
     <>
       <IconContext.Provider value={{ color: "#131313" }}>
-        <Nav active={scroll} click={click}>
-          <NavLogo to="/" onClick={closeMobileMenu}>
-            <NavIcon src={logo} alt="logo" />
+        <Nav active={scroll} click={click} navColor={navColor}>
+          <NavLogo to="/" navColor={navColor} onClick={closeMobileMenu}>
+            <NavIcon src={logoSrc} alt="logo" />
           </NavLogo>
-          <MobileIcon onClick={handleClick}>
-            {click ? <FiX /> : <FiMenu />}
+          <MobileIcon onClick={handleClick} navColor={navColor}>
+            {click ? (
+              <FiX
+                style={{ color: navColor === "white" ? "white" : "black" }}
+              />
+            ) : (
+              <FiMenu
+                style={{ color: navColor === "white" ? "white" : "black" }}
+              />
+            )}
           </MobileIcon>
-          <NavMenu onClick={handleClick} click={click}>
+          <NavMenu onClick={handleClick} click={click} navColor={navColor}>
             {data.map((el, index) => (
               <NavItem key={index}>
-                <NavLinks to={el.to}>{el.text}</NavLinks>
+                <NavLinks to={el.to} navColor={navColor}>
+                  {el.text}
+                </NavLinks>
               </NavItem>
             ))}
           </NavMenu>
