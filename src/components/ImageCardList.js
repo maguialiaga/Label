@@ -7,7 +7,6 @@ import agus from "../assets/images/agus.jpg";
 import apo from "../assets/images/apo.jpg";
 import abuk from "../assets/images/abuk.jpg";
 
-// import NameSlider from "../components/NameSlider";
 import { Link } from "gatsby";
 
 const CardLink = styled(Link)`
@@ -28,10 +27,12 @@ const CardContainer = styled.div`
 const Card = styled.div`
   width: 400px;
   margin: 15px;
-
   overflow: hidden;
   /* box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); */
   transition: transform 0.3s ease-in-out;
+  @media (max-width: 768px) {
+    width: 250px;
+  }
 `;
 
 const CardImage = styled.img`
@@ -42,6 +43,11 @@ const CardImage = styled.img`
 
   ${Card}:hover & {
     transform: scale(1.2);
+  }
+  @media (max-width: 768px) {
+    ${Card}:hover & {
+      transform: none;
+    }
   }
 `;
 
