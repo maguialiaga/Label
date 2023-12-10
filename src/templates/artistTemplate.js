@@ -95,6 +95,7 @@ const Button = styled.button`
   }
   @media only screen and (max-width: 480px) {
     font-size: 12px;
+    margin-top: 10px;
   }
 `;
 
@@ -120,8 +121,8 @@ const Right = styled.div`
   position: relative;
 
   @media (max-width: 768px) {
-    margin-left: 0; /* Adjust margin for smaller screens */
-    margin-top: 25rem;
+    margin-left: 1.5rem;
+    margin-top: 20rem;
   }
 `;
 
@@ -151,10 +152,10 @@ const Info = styled.div`
   flex-direction: column;
   align-items: center;
   padding: 20px;
-  max-width: 500px; /* Set a maximum width */
+  max-width: 600px; /* Set a maximum width */
   width: 100%;
   color: white;
-  font-family: "Karla", sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-weight: 200;
   /* background-color: white; */
   background: linear-gradient(
@@ -172,6 +173,7 @@ const Info = styled.div`
   @media (max-width: 768px) {
     margin-top: 20px;
     font-size: 0.75rem;
+    max-width: 100%;
   }
 `;
 

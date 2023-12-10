@@ -36,6 +36,9 @@ const NavLogo = styled(Link)`
   z-index: 50;
   margin-left: 3rem;
   color: ${({ navColor }) => (navColor === "white" ? "white" : "black")};
+  @media screen and (max-width: 960px) {
+    margin-left: 1rem;
+  }
 `;
 
 const NavIcon = styled.img`
