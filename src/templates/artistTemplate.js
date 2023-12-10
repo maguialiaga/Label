@@ -79,6 +79,7 @@ const Button = styled.button`
   border-radius: 4px;
   background: none;
   white-space: nowrap;
+  margin-top: 50px;
   padding: 10px 20px;
   font-size: 16px;
   color: white;
@@ -91,6 +92,9 @@ const Button = styled.button`
     background-color: white;
     border: solid white;
     color: black;
+  }
+  @media only screen and (max-width: 480px) {
+    font-size: 12px;
   }
 `;
 
@@ -127,7 +131,7 @@ const Text = styled.h1`
   font-size: 2rem;
   z-index: 1;
   @media (max-width: 768px) {
-    font-size: 1rem;
+    font-size: 1.5rem;
   }
 `;
 const Desc = styled.h1`
@@ -137,7 +141,7 @@ const Desc = styled.h1`
   margin-top: 10px;
   z-index: 1;
   @media (max-width: 768px) {
-    font-size: 0.5rem;
+    font-size: 1rem;
   }
 `;
 
@@ -167,7 +171,7 @@ const Info = styled.div`
 
   @media (max-width: 768px) {
     margin-top: 20px;
-    font-size: 0.5rem;
+    font-size: 0.75rem;
   }
 `;
 
@@ -190,10 +194,7 @@ const ArtistTemplate = ({ pageContext }) => {
               <Text>{title}</Text>
               <Desc>{description}</Desc>
               <Info>{info}</Info>
-              <br></br>
-              <br></br>
-              <br></br>
-              <br></br>
+
               <Button>booking request</Button>
             </Right>
             <Left></Left>
