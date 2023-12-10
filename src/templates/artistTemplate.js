@@ -30,15 +30,23 @@ const Gradient = styled.div`
 `;
 
 const Container = styled.div`
+  /* display: flex;
+  justify-content: center;
+  align-items: flex-start; /* Align items to the top */
+  //height: 100vh;
+  //padding: 20px; /* Adjust padding for smaller screens */
+
+  //@media (min-width: 768px) {
+  // align-items: center; /* Center items for larger screens */
+  //} */
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start; /* Align items to the top */
   height: 100vh;
+  padding: 20px; /* Adjust padding for smaller screens */
 
-  @media (max-width: 768px) {
-    height: 100vh;
-    /* height: auto; */
-    padding: 20px;
+  @media (min-width: 768px) {
+    align-items: center; /* Center items for larger screens */
   }
 `;
 
@@ -65,20 +73,8 @@ const Left = styled.div`
 //   }
 // `;
 
-const Info = styled.div`
-  width: 60%;
-  margin-top: 50px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-
-  @media only screen and (max-width: 480px) {
-    width: 100%;
-    flex-direction: column;
-  }
-`;
-
 const Button = styled.button`
+  margin-top: 20px;
   font-family: "Roboto Mono", monospace;
   border-radius: 4px;
   background: none;
@@ -89,8 +85,6 @@ const Button = styled.button`
   outline: none;
   border: solid white;
   cursor: pointer;
-  overflow: hidden;
-  position: relative;
 
   &:hover {
     transition: 0.3s ease;
@@ -121,8 +115,9 @@ const Right = styled.div`
   height: 3vh;
   position: relative;
 
-  @media only screen and (max-width: 480px) {
-    display: flex;
+  @media (max-width: 768px) {
+    margin-left: 0; /* Adjust margin for smaller screens */
+    margin-top: 25rem;
   }
 `;
 
@@ -130,11 +125,50 @@ const Text = styled.h1`
   font-family: "Montserrat", sans-serif;
   color: white;
   font-size: 2rem;
+  z-index: 1;
+  @media (max-width: 768px) {
+    font-size: 1rem;
+  }
 `;
 const Desc = styled.h1`
   font-family: "Montserrat", sans-serif;
   color: white;
   font-size: 15px;
+  margin-top: 10px;
+  z-index: 1;
+  @media (max-width: 768px) {
+    font-size: 0.5rem;
+  }
+`;
+
+const Info = styled.div`
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  max-width: 500px; /* Set a maximum width */
+  width: 100%;
+  color: white;
+  font-family: "Karla", sans-serif;
+  font-weight: 200;
+  /* background-color: white; */
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.1),
+    rgba(255, 255, 255, 0)
+  );
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 20px;
+  /* border: 1px solid rgba(255, 255, 255, 0.18); */
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  border-radius: 2px;
+
+  @media (max-width: 768px) {
+    margin-top: 20px;
+    font-size: 0.5rem;
+  }
 `;
 
 const ArtistTemplate = ({ pageContext }) => {
@@ -146,7 +180,6 @@ const ArtistTemplate = ({ pageContext }) => {
       <NavBar navColor={"white"} />
       <Wrapper>
         <Gradient></Gradient>
-
         <Slide
           style={{
             backgroundImage: `url(${backgroundImage.default})`,
@@ -156,16 +189,12 @@ const ArtistTemplate = ({ pageContext }) => {
             <Right>
               <Text>{title}</Text>
               <Desc>{description}</Desc>
-
               <Info>{info}</Info>
-
-              {/* <Desc>{description}</Desc> */}
               <br></br>
               <br></br>
               <br></br>
               <br></br>
               <Button>booking request</Button>
-              {/* <Title>BOOK</Title> */}
             </Right>
             <Left></Left>
           </Container>
@@ -176,3 +205,21 @@ const ArtistTemplate = ({ pageContext }) => {
 };
 
 export default ArtistTemplate;
+
+// <Container>
+//   <Right>
+//     <Text>{title}</Text>
+//     <Desc>{description}</Desc>
+
+//     <Info>{info}</Info>
+
+//     {/* <Desc>{description}</Desc> */}
+//     <br></br>
+//     <br></br>
+//     <br></br>
+//     <br></br>
+//     <Button>booking request</Button>
+//     {/* <Title>BOOK</Title> */}
+//   </Right>
+//   <Left></Left>
+// </Container>;

@@ -30,8 +30,8 @@ exports.createPages = async ({ actions }) => {
       title: "AGUSTIN GIRI",
       link: "agustingiri",
       description: "DJ / PRODUCER",
-      info: "MORE INFO",
-      image: `gonCover.jpg`,
+      info: "Agustin Giri is an Argentinan DJ & Music Producer who was born in Mar del Plata. From an early age, his keen interest in electronic music led him to explore musical production, opening a path of recognition in the local and international scene.",
+      image: `agusCover.jpg`,
     },
     {
       title: "ABUK",
@@ -43,9 +43,9 @@ exports.createPages = async ({ actions }) => {
     {
       title: "APO LUCIA",
       link: "apolucia",
-      description: "SINGER / ARTIST",
+      description: "SINGER",
       info: "MORE INFO",
-      image: `gonCover.jpg`,
+      image: `apoCover.jpeg`,
     },
   ];
 
