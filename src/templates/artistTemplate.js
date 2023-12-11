@@ -1,5 +1,4 @@
-import React from "react";
-
+import React, { useState } from "react";
 import Layout from "../components/Layout";
 import NavBar from "../components/NavBar";
 import styled from "styled-components";
@@ -177,9 +176,37 @@ const Info = styled.div`
   }
 `;
 
+const Modal = styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* semi-transparent background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
+const ModalContent = styled.div`
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+`;
+
 const ArtistTemplate = ({ pageContext }) => {
   const { title, image, description, info } = pageContext.artist;
   const backgroundImage = require(`../assets/images/${image}`);
+
+  const [showModal, setShowModal] = useState(false);
+
+  const openModal = () => {
+    setShowModal(true);
+  };
+
+  const closeModal = () => {
+    setShowModal(false);
+  };
 
   return (
     <Layout>
@@ -197,7 +224,12 @@ const ArtistTemplate = ({ pageContext }) => {
               <Desc>{description}</Desc>
               <Info>{info}</Info>
 
-              <Button>booking request</Button>
+              <Button onClick={openModal}>booking request</Button>
+              {showModal && (
+                <Modal>
+                  <Button onClick={closeModal}>Close Modal</Button>
+                </Modal>
+              )}
             </Right>
             <Left></Left>
           </Container>
