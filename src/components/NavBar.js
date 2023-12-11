@@ -92,7 +92,8 @@ const NavMenu = styled.ul`
 const NavItem = styled.li`
   height: 80px;
   cursor: pointer;
-  font-family: "Quicksand", sans-serif;
+  /* font-family: "Quicksand", sans-serif; */
+  font-family: "Roboto Mono", monospace;
   @media screen and (max-width: 960px) {
     width: 100%;
     &:hover {

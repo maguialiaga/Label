@@ -64,7 +64,7 @@ const CardTitle = styled.h3`
   align-items: center;
   justify-content: center;
   height: 100%;
-  font-weight: 400;
+  font-weight: 500;
   margin-bottom: 10px;
   font-size: 1.5rem;
 `;
@@ -97,37 +97,31 @@ const ImageCardList = () => {
       imageUrl: `${gon}`,
       title: "GESPONA",
       link: "gespona",
-      //description: "Description for Card 1",
     },
     {
       imageUrl: `${nico}`,
       title: "DJOLEE",
       link: "djolee",
-      // description: "Description for Card 2",
     },
     {
       imageUrl: `${jero}`,
       title: "AMADORI",
       link: "amadori",
-      // description: "Description for Card 1",
     },
     {
       imageUrl: `${agus}`,
       title: "AGUSTIN GIRI",
       link: "agustingiri",
-      // description: "Description for Card 1",
     },
     {
       imageUrl: `${abuk}`,
       title: "ABUK",
       link: "abuk",
-      // description: "Description for Card 1",
     },
     {
       imageUrl: `${apo}`,
       title: "APO LUCIA",
       link: "apolucia",
-      // description: "Description for Card 1",
     },
   ];
 
