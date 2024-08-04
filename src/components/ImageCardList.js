@@ -68,13 +68,24 @@ const CardTitle = styled.h3`
   margin-bottom: 10px;
   font-size: 1.5rem;
 `;
+const CardSubtitle = styled.h4`
+  font-family: "Montserrat", sans-serif;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  font-weight: 500;
+  margin-bottom: 10px;
+  font-size: 1rem;
+`;
 
 const CardDescription = styled.p`
   font-size: 0.9em;
   color: #666;
 `;
 
-const ImageCard = ({ imageUrl, title, description, link }) => {
+const ImageCard = ({ imageUrl, title, subtitle, description, link }) => {
   return (
     <>
       <CardLink to={`/roaster/${link}`}>
@@ -82,6 +93,7 @@ const ImageCard = ({ imageUrl, title, description, link }) => {
           <CardImage src={imageUrl} alt={title} />
           <CardContent>
             <CardTitle>{title}</CardTitle>
+            <CardSubtitle>{subtitle}</CardSubtitle>
             <CardDescription>{description}</CardDescription>
           </CardContent>
         </Card>
@@ -94,19 +106,9 @@ const ImageCardList = () => {
   // Example data
   const cardsData = [
     {
-      imageUrl: `${gon}`,
-      title: "GESPONA",
-      link: "gespona",
-    },
-    {
-      imageUrl: `${nico}`,
-      title: "DJOLEE",
-      link: "djolee",
-    },
-    {
-      imageUrl: `${jero}`,
-      title: "AMADORI",
-      link: "amadori",
+      imageUrl: `${abuk}`,
+      title: "ABUK",
+      link: "abuk",
     },
     {
       imageUrl: `${agus}`,
@@ -114,14 +116,25 @@ const ImageCardList = () => {
       link: "agustingiri",
     },
     {
-      imageUrl: `${abuk}`,
-      title: "ABUK",
-      link: "abuk",
+      imageUrl: `${jero}`,
+      title: "AMADORI",
+      link: "amadori",
     },
     {
       imageUrl: `${apo}`,
       title: "APO LUCIA",
+      subtitle: "Vocalist",
       link: "apolucia",
+    },
+    {
+      imageUrl: `${nico}`,
+      title: "DJOLEE",
+      link: "djolee",
+    },
+    {
+      imageUrl: `${gon}`,
+      title: "GESPONA",
+      link: "gespona",
     },
   ];
 
@@ -133,6 +146,7 @@ const ImageCardList = () => {
             key={index}
             imageUrl={card.imageUrl}
             title={card.title}
+            subtitle={card.subtitle}
             link={card.link}
             description={card.description}
           />

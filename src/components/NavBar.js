@@ -74,14 +74,15 @@ const NavMenu = styled.ul`
     width: 100%;
     height: 40vh;
     position: fixed;
-    padding-top: 20%;
+    padding-top: 30%;
     top: 0;
     left: 0;
     opacity: ${({ click }) => (click ? 1 : 0)};
     visibility: ${({ click }) => (click ? "visible" : "hidden")};
     transform: translateY(${({ click }) => (click ? "0" : "-10px")});
     transition: opacity 0.5s ease;
-    background-color: #787276;
+    background-color: black;
+    /* background-color: #787276; */
     /* background-color: rgb(255, 255, 255); */
   }
   > li:first-child {
@@ -112,8 +113,8 @@ const NavLinks = styled(Link)`
   height: 100%;
   color: ${({ navColor }) => (navColor === "white" ? "white" : "black")};
   &:hover {
-    /* text-decoration: underline; */
-    color: rgb(105, 105, 105);
+    text-decoration: underline;
+    /* color: rgb(105, 105, 105); */
     transition: all 0.3s ease;
   }
   @media screen and (max-width: 960px) {
@@ -122,8 +123,8 @@ const NavLinks = styled(Link)`
     width: 100%;
     display: table;
     &:hover {
-      /* text-decoration: underline; */
-      color: rgb(105, 105, 105);
+      text-decoration: underline;
+      /* color: rgb(105, 105, 105); */
       transition: all 0.3s ease;
     }
   }
