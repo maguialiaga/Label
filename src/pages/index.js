@@ -23,7 +23,7 @@ export default function Home() {
         <PreLoader />
       ) : (
         <Layout>
-          <Seo title="Rummel Label" />
+          <Seo title="Rummel" />
           <NavBar navColor={"white"} />
           {/* <ImageSlider></ImageSlider> */}
           <Video></Video>
