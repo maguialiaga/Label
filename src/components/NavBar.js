@@ -94,7 +94,8 @@ const NavItem = styled.li`
   height: 80px;
   cursor: pointer;
   /* font-family: "Quicksand", sans-serif; */
-  font-family: "Roboto Mono", monospace;
+  /* font-family: "Roboto Mono", monospace; */
+  font-family: "Montserrat", sans-serif;
   @media screen and (max-width: 960px) {
     width: 100%;
     &:hover {
@@ -104,31 +105,75 @@ const NavItem = styled.li`
 `;
 
 const NavLinks = styled(Link)`
-  /* color: black; */
   display: flex;
   font-weight: 500;
   align-items: center;
   text-decoration: none;
-  padding: 0.5rem 1rem;
+  padding: 0.5rem 2rem;
+  bottom: 1px;
   height: 100%;
   color: ${({ navColor }) => (navColor === "white" ? "white" : "black")};
-  &:hover {
-    text-decoration: underline;
-    /* color: rgb(105, 105, 105); */
-    transition: all 0.3s ease;
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 1px;
+    bottom: 0;
+    left: 0;
+    background-color: ${({ navColor }) =>
+      navColor === "white" ? "white" : "black"};
+    transition: width 0.2s ease-in-out;
   }
+
+  &:hover::after {
+    width: 100%;
+  }
+
   @media screen and (max-width: 960px) {
     text-align: center;
-    padding: 2rem;
+    padding: 1rem;
     width: 100%;
     display: table;
-    &:hover {
-      text-decoration: underline;
-      /* color: rgb(105, 105, 105); */
-      transition: all 0.3s ease;
+
+    &::after {
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    &:hover::after {
+      width: 30%;
     }
   }
 `;
+
+// const NavLinks = styled(Link)`
+//   /* color: black; */
+//   display: flex;
+//   font-weight: 500;
+//   align-items: center;
+//   text-decoration: none;
+//   padding: 0.5rem 1rem;
+//   height: 100%;
+//   color: ${({ navColor }) => (navColor === "white" ? "white" : "black")};
+//   &:hover {
+//     /* text-decoration: underline; */
+//     /* color: rgb(105, 105, 105); */
+//     /* transition: all 0.3s ease; */
+//   }
+//   @media screen and (max-width: 960px) {
+//     text-align: center;
+//     padding: 2rem;
+//     width: 100%;
+//     display: table;
+//     &:hover {
+//       /* text-decoration: underline; */
+//       /* color: rgb(105, 105, 105); */
+//       /* transition: all 0.3s ease; */
+//     }
+//   }
+// `;
 
 //DATA
 const data = [

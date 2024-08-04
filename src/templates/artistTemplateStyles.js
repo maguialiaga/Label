@@ -71,7 +71,8 @@ export const Left = styled.div`
 
 export const Button = styled.button`
   margin-top: 20px;
-  font-family: "Roboto Mono", monospace;
+  /* font-family: "Roboto Mono", monospace; */
+  font-family: "Montserrat", sans-serif;
   border-radius: 4px;
   background: none;
   white-space: nowrap;
