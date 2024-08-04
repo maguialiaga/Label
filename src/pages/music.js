@@ -6,7 +6,7 @@ import ImageSlider from "../components/ImageSlider";
 function music() {
   return (
     <Layout>
-      <NavBar />
+      <NavBar navColor={"white"} />
       <ImageSlider></ImageSlider>
     </Layout>
   );
