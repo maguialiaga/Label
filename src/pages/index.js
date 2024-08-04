@@ -26,7 +26,7 @@ export default function Home() {
           <Seo title="Rummel Label" />
           <NavBar navColor={"white"} />
           {/* <ImageSlider></ImageSlider> */}
-          {/* <Video></Video> */}
+          <Video></Video>
         </Layout>
       )}
     </>
