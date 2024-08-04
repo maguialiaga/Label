@@ -81,7 +81,8 @@ const NavMenu = styled.ul`
     visibility: ${({ click }) => (click ? "visible" : "hidden")};
     transform: translateY(${({ click }) => (click ? "0" : "-10px")});
     transition: opacity 0.5s ease;
-    background-color: black;
+    background-color: ${({ navColor }) =>
+      navColor === "black" ? "white" : "black"};
     /* background-color: #787276; */
     /* background-color: rgb(255, 255, 255); */
   }

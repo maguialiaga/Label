@@ -6,7 +6,7 @@ import ImageCardList from "../components/ImageCardList";
 const roaster = () => {
   return (
     <Layout>
-      <NavBar navColor={"black"} />
+      <NavBar navColor={"white"} />
       <ImageCardList />
     </Layout>
   );
