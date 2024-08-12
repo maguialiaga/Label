@@ -9,15 +9,15 @@ exports.createPages = async ({ actions }) => {
       title: "ABUK",
       link: "abuk",
       description: "DJ / PRODUCER",
-      info: "An outstanding Argentinian based in Barcelona artist who masterfully fuses the roots of melodic house & techno, ",
-      image: `abukCover.jpeg`,
+      info: "An outstanding Argentinian based in Barcelona artist who masterfully fuses the roots of melodic house & techno",
+      image: `abukCover.jpg`,
     },
     {
       title: "AGUSTIN GIRI",
       link: "agustingiri",
       description: "DJ / PRODUCER",
       info: "Agustin Giri is an Argentinan DJ & Music Producer who was born in Mar del Plata. From an early age, his keen interest in ",
-      image: `agusCover.jpg`,
+      image: `giriCover.jpg`,
     },
     {
       title: "AMADORI",
@@ -25,14 +25,6 @@ exports.createPages = async ({ actions }) => {
       description: "DJ / PRODUCER",
       info: "The argentinian producer Amadori currently lives in Barcelona since 2018, but he began his career as a DJ ",
       image: `jeroCover.jpg`,
-    },
-    {
-      title: "APO LUCIA",
-      link: "apolucia",
-      description: "VOCALIST",
-      info: "Lucia is an Argentinan singer based in Barcelona, she collaborated in Caminos the Fuego... Released on...",
-      labels: "",
-      image: `apoCover.jpeg`,
     },
     {
       title: "DJOLEE",
@@ -58,11 +50,23 @@ exports.createPages = async ({ actions }) => {
       instagram: "https://www.instagram.com/gespona_music/",
       soundcloud: "https://soundcloud.com/gespona",
     },
+    {
+      title: "LAST MEN ON EARTH",
+      link: "lastmenonearth",
+      description: "DJ / PRODUCER",
+      info: "The argentinians producers duet",
+      labels: "",
+      image: `lastmenCover.jpg`,
+      spotify:
+        "https://open.spotify.com/artist/59ewWwEHhZ0yq7SKXxUj0d?si=a6WhJSQNSNWNqw18dxGSEQ",
+      instagram: "https://www.instagram.com/gespona_music/",
+      soundcloud: "https://soundcloud.com/gespona",
+    },
   ];
 
   artistsData.forEach((artist) => {
     createPage({
-      path: `/roaster/${artist.link}`,
+      path: `/artists/${artist.link}`,
       component: require.resolve("./src/templates/artistTemplate.js"),
       context: {
         artist: {

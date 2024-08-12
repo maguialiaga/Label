@@ -1,5 +1,6 @@
 import React, { useRef, useState } from "react";
 import {
+  ModalBackground,
   FormColumn,
   FormWrapper,
   FormInput,
@@ -14,12 +15,9 @@ import {
   TextArea,
   Container,
   Heading,
-  MainHeading,
   MobileIcon,
-  Row,
 } from "../components/BookFormStyles";
 import { FiX } from "react-icons/fi";
-
 import validateBookForm from "./Validate";
 import emailjs from "@emailjs/browser";
 
@@ -87,7 +85,7 @@ const BookForm = ({ showModal, setShowModal }) => {
   const formData = [
     {
       label: "Contact*",
-      label2: "Enter your email contact",
+      label2: "Enter your email",
       value: email,
       onChange: (e) => setEmail(e.target.value),
       type: "email",
@@ -98,15 +96,15 @@ const BookForm = ({ showModal, setShowModal }) => {
       label2: "Enter your event capacity",
       value: event,
       onChange: (e) => setEvent(e.target.value),
-      type: "event capacity",
+      type: "number",
       name: "user_event",
     },
     {
-      label: "City/Country*",
-      label2: "Enter the name of the city/country",
+      label: "City,Country*",
+      label2: "Enter the name of the city, country",
       value: city,
       onChange: (e) => setCity(e.target.value),
-      type: "city",
+      type: "country",
       name: "user_city",
     },
     {
@@ -125,18 +123,6 @@ const BookForm = ({ showModal, setShowModal }) => {
       type: "offer",
       name: "user_offer",
     },
-    // {
-    //   label: "Choose an option*",
-    //   value: option,
-    //   onChange: (e) => setOption(e.target.value),
-    //   type: "select",
-    //   name: "user_option",
-    //   options: [
-    //     { value: "Mixdown", label: "Mixdown" },
-    //     { value: "Mixdown & Mastering", label: "Mixdown & Mastering" },
-    //     { value: "Mastering", label: "Mastering" },
-    //   ],
-    // },
   ];
 
   return (
@@ -150,8 +136,6 @@ const BookForm = ({ showModal, setShowModal }) => {
             </MobileIcon>
             <FormWrapper ref={form} onSubmit={handleSubmit}>
               <FormInputRow key={3}>
-                {/* <FormLabel>Choose your request</FormLabel> */}
-                {/* <FormLabel>Choose an option</FormLabel> */}
                 <FormSelect
                   type={"select"}
                   name={"user_option"}
@@ -161,7 +145,7 @@ const BookForm = ({ showModal, setShowModal }) => {
                   <option value={"Abuk"}>Abuk</option>
                   <option value={"AgustinGiri"}>Agustin Giri</option>
                   <option value={"Amadori"}>Amadori</option>
-                  <option value={"Djolee"}>Djole</option>
+                  <option value={"Djolee"}>Djolee</option>
                   <option value={"Gespona"}>Gespona</option>
                 </FormSelect>
               </FormInputRow>
@@ -213,18 +197,8 @@ const BookForm = ({ showModal, setShowModal }) => {
             )}
           </FormColumn>
         </FormRow>
-        {/* <MainHeadingFour>
-          Turnaround of 10 days max. after your payment
-        </MainHeadingFour>
-        <MainHeadingFour>2 Revisions included</MainHeadingFour>
-        <MainHeadingFour>Extra revision 15 EUR</MainHeadingFour> */}
       </Container>
-      <Heading>
-        {/* <MainHeadingFour>
-          Turrnarround of 10 days max. after your payment - 2 Revisions included
-        </MainHeadingFour>
-        <MainHeadingFour>Extra revision ---- 15 EUR</MainHeadingFour> */}
-      </Heading>
+      <Heading />
     </FormSection>
   );
 };

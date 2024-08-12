@@ -71,12 +71,10 @@ export const Left = styled.div`
 
 export const Button = styled.button`
   margin-top: 20px;
-  /* font-family: "Roboto Mono", monospace; */
   font-family: "Montserrat", sans-serif;
   border-radius: 4px;
   background: none;
   white-space: nowrap;
-  margin-top: 50px;
   padding: 10px 20px;
   font-size: 16px;
   color: white;
@@ -90,6 +88,7 @@ export const Button = styled.button`
     border: solid white;
     color: black;
   }
+
   @media only screen and (max-width: 480px) {
     font-size: 12px;
     margin-top: 10px;
@@ -101,7 +100,6 @@ export const Right = styled.div`
   margin-left: 7rem;
   width: auto;
   max-height: calc(100vh - 40px); /* Adjust 40px for padding or margins */
-  /* overflow-y: scroll; */
   position: relative;
 
   @media (max-width: 768px) {
@@ -109,15 +107,6 @@ export const Right = styled.div`
     margin-top: 20rem;
     max-height: calc(100vh - 200px); /* Adjust as necessary */
   }
-  /* margin-left: 7rem;
-  width: auto;
-  height: 3vh;
-  position: relative;
-
-  @media (max-width: 768px) {
-    margin-left: 1.5rem;
-    margin-top: 20rem;
-  } */
 `;
 
 export const Text = styled.h1`
@@ -125,16 +114,19 @@ export const Text = styled.h1`
   color: white;
   font-size: 2rem;
   z-index: 1;
+
   @media (max-width: 768px) {
     font-size: 1.5rem;
   }
 `;
+
 export const Desc = styled.h1`
   font-family: "Montserrat", sans-serif;
   color: white;
   font-size: 15px;
   margin-top: 10px;
   z-index: 1;
+
   @media (max-width: 768px) {
     font-size: 1rem;
   }
@@ -145,6 +137,7 @@ export const BioName = styled.h3`
   font-size: 1rem;
   letter-spacing: 2px;
   text-align: left;
+
   @media screen and (max-width: 768px) {
     font-weight: 600;
     font-size: 1rem;
@@ -163,7 +156,6 @@ export const Info = styled.div`
   color: white;
   font-family: "Montserrat", sans-serif;
   font-weight: 200;
-  /* background-color: white; */
   background: linear-gradient(
     135deg,
     rgba(255, 255, 255, 0.1),
@@ -171,10 +163,8 @@ export const Info = styled.div`
   );
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
-  border-radius: 20px;
-  /* border: 1px solid rgba(255, 255, 255, 0.18); */
+  border-radius: 0px;
   box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
-  border-radius: 2px;
 
   @media (max-width: 768px) {
     margin-top: 20px;
@@ -194,4 +184,5 @@ export const Modal = styled.div`
   justify-content: center;
   align-items: center;
   z-index: 1000;
+  overflow-y: auto;
 `;

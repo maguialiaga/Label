@@ -179,9 +179,9 @@ const NavLinks = styled(Link)`
 //DATA
 const data = [
   {
-    to: "/roaster",
-    text: "ROASTER",
-    id: "roaster",
+    to: "/artists",
+    text: "ARTISTS",
+    id: "artists",
   },
   {
     to: "/music",

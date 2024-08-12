@@ -1,3 +1,5 @@
+// ArtistTemplate.js
+
 import React, { useState } from "react";
 import Layout from "../components/Layout";
 import NavBar from "../components/NavBar";
@@ -50,11 +52,12 @@ const ArtistTemplate = ({ pageContext }) => {
                 <BioName>Released on</BioName>
                 {info}
                 <br></br>
+                <br></br>
                 <BioName>Supported by</BioName>
                 {support}
               </Info>
 
-              <Button onClick={openModal}>booking request</Button>
+              <Button onClick={openModal}>Booking request</Button>
               {showModal && (
                 <Modal>
                   <BookForm showModal={showModal} setShowModal={setShowModal} />

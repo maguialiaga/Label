@@ -4,7 +4,7 @@ import gon from "../assets/images/gon.jpg";
 import nico from "../assets/images/nico.jpg";
 import jero from "../assets/images/jero.jpg";
 import agus from "../assets/images/agus.jpg";
-import apo from "../assets/images/apo.jpg";
+import lastmen from "../assets/images/lastmen.jpg";
 import abuk from "../assets/images/abuk.jpg";
 
 import { Link } from "gatsby";
@@ -88,7 +88,7 @@ const CardDescription = styled.p`
 const ImageCard = ({ imageUrl, title, subtitle, description, link }) => {
   return (
     <>
-      <CardLink to={`/roaster/${link}`}>
+      <CardLink to={`/artists/${link}`}>
         <Card>
           <CardImage src={imageUrl} alt={title} />
           <CardContent>
@@ -120,12 +120,7 @@ const ImageCardList = () => {
       title: "AMADORI",
       link: "amadori",
     },
-    {
-      imageUrl: `${apo}`,
-      title: "APO LUCIA",
-      subtitle: "Vocalist",
-      link: "apolucia",
-    },
+
     {
       imageUrl: `${nico}`,
       title: "DJOLEE",
@@ -135,6 +130,11 @@ const ImageCardList = () => {
       imageUrl: `${gon}`,
       title: "GESPONA",
       link: "gespona",
+    },
+    {
+      imageUrl: `${lastmen}`,
+      title: "LAST MEN ON EARTH",
+      link: "lastmenonearth",
     },
   ];
 
