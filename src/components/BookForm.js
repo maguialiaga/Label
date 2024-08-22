@@ -22,13 +22,13 @@ import validateBookForm from "./Validate";
 import emailjs from "@emailjs/browser";
 
 const BookForm = ({ showModal, setShowModal }) => {
+  const [option, setOption] = useState("");
   const [email, setEmail] = useState("");
   const [event, setEvent] = useState("");
   const [city, setCity] = useState("");
   const [date, setDate] = useState("");
   const [offer, setOffer] = useState("");
   const [message, setMessage] = useState("");
-  const [option, setOption] = useState("");
   const [error, setError] = useState(null);
   const [success, setSuccess] = useState(null);
   const form = useRef();
@@ -39,9 +39,17 @@ const BookForm = ({ showModal, setShowModal }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    const eventValue = Number(event);
+    const offerValue = Number(offer);
+
     const resultError = validateBookForm({
       email,
       option,
+      event: eventValue,
+      city,
+      date,
+      offer: offerValue,
     });
 
     if (resultError !== null) {
@@ -50,9 +58,8 @@ const BookForm = ({ showModal, setShowModal }) => {
     }
     emailjs
       .sendForm(
-        // "service_jrm9xqc",
-        "service_3h13353",
-        "template_6e5i939",
+        "service_vj6g3gd",
+        "template_ntc50mp",
         form.current,
         "vRc98fB-F8s0iNWTT"
       )
@@ -65,16 +72,16 @@ const BookForm = ({ showModal, setShowModal }) => {
         }
       );
 
+    setOption("");
     setEmail("");
     setEvent("");
     setCity("");
     setDate("");
     setOffer("");
     setMessage("");
-    setOption("");
     setError(null);
     setSuccess("Email was sent!");
-    setShowModal(false);
+    // setShowModal(false);
   };
 
   const messageVariants = {
@@ -85,7 +92,7 @@ const BookForm = ({ showModal, setShowModal }) => {
   const formData = [
     {
       label: "Contact*",
-      label2: "Enter your email",
+      label2: "Enter email",
       value: email,
       onChange: (e) => setEmail(e.target.value),
       type: "email",
@@ -93,18 +100,18 @@ const BookForm = ({ showModal, setShowModal }) => {
     },
     {
       label: "Event Capacity*",
-      label2: "Enter your event capacity",
+      label2: "Enter event capacity",
       value: event,
       onChange: (e) => setEvent(e.target.value),
       type: "number",
       name: "user_event",
     },
     {
-      label: "City,Country*",
-      label2: "Enter the name of the city, country",
+      label: "City/Country*",
+      label2: "Enter city/country",
       value: city,
       onChange: (e) => setCity(e.target.value),
-      type: "country",
+      type: "text",
       name: "user_city",
     },
     {
@@ -117,10 +124,10 @@ const BookForm = ({ showModal, setShowModal }) => {
     },
     {
       label: "Offer*",
-      label2: "In EUR€",
+      label2: "In EUR €",
       value: offer,
       onChange: (e) => setOffer(e.target.value),
-      type: "offer",
+      type: "number",
       name: "user_offer",
     },
   ];
@@ -147,6 +154,7 @@ const BookForm = ({ showModal, setShowModal }) => {
                   <option value={"Amadori"}>Amadori</option>
                   <option value={"Djolee"}>Djolee</option>
                   <option value={"Gespona"}>Gespona</option>
+                  <option value={"Gespona"}>Last Men On Earth</option>
                 </FormSelect>
               </FormInputRow>
               {formData.map((el, index) => (
