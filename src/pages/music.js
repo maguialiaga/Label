@@ -7,9 +7,9 @@ import Music from "../components/Music";
 function music() {
   return (
     <Layout>
-      <NavBar navColor={"white"} />
-      {/* <Music></Music> */}
-      <ImageSlider></ImageSlider>
+      <NavBar navColor={"black"} />
+      <Music />
+      {/* <ImageSlider></ImageSlider> */}
     </Layout>
   );
 }

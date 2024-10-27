@@ -6,8 +6,6 @@ import styled from "styled-components";
 import { FiMenu, FiX } from "react-icons/fi";
 import { IconContext } from "react-icons";
 
-//STYLES
-
 const Nav = styled.nav`
   z-index: 999;
   position: absolute;
