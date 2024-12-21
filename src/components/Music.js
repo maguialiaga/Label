@@ -18,69 +18,30 @@ import rummel12 from "../assets/images/rummel_12.jpg";
 import rummel13 from "../assets/images/rummel_13.jpg";
 
 // Styled components
-
-// const Container = styled.div`
-//   margin-top: 150px;
-//   display: flex;
-//   flex-wrap: wrap;
-//   justify-content: center;
-//   align-items: center;
-//   position: relative;
-//   z-index: 1;
-// `;
-
-// const Card = styled.div`
-//   flex: 1 1 calc(33.33% - 30px); // Three columns on large screens
-//   max-width: 250px;
-//   /* width: 50px; */
-//   margin: 15px;
-//   overflow: hidden;
-//   /* box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); */
-//   transition: transform 0.3s ease-in-out;
-//   @media (max-width: 768px) {
-//     width: 250px;
-//   }
-//   &:hover {
-//     transform: scale(1.05);
-//   }
-
-//   @media (max-width: 1024px) {
-//     flex: 1 1 calc(50% - 30px); // Two columns on medium screens (tablets)
-//   }
-
-//   @media (max-width: 768px) {
-//     flex: 1 1 calc(100% - 30px); // One column on small/mobile screens
-//   }
-// `;
-const Container = styled.div`
-  margin-top: 150px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-evenly; // Distribute items evenly in each row
-  align-items: flex-start;
-  position: relative;
-  z-index: 1;
-  padding: 0 120px;
-`;
-
 const Card = styled.div`
-  flex: 1 1 calc(33.33% - 40px); // Ensures 3 cards per row with space between
-  max-width: calc(33.33% - 40px);
-  margin: 15px 20px; // Space between each card
+  flex: 1 1 calc(30% - 40px);
+  max-width: calc(30% - 40px);
+  margin: 10px 20px;
   overflow: hidden;
+  position: relative; // Required for positioning the description
   transition: transform 0.3s ease-in-out;
 
   &:hover {
     transform: scale(1.05);
+
+    div {
+      opacity: 1; // Make the description visible on hover
+      visibility: visible;
+    }
   }
 
   @media (max-width: 1024px) {
-    flex: 1 1 calc(50% - 30px); // Two cards per row on medium screens
+    flex: 1 1 calc(50% - 30px);
     max-width: calc(50% - 30px);
   }
 
   @media (max-width: 768px) {
-    flex: 1 1 calc(100% - 20px); // One card per row on small/mobile screens
+    flex: 1 1 calc(100% - 20px);
     max-width: calc(100% - 20px);
   }
 `;
@@ -88,24 +49,93 @@ const Card = styled.div`
 const CardImage = styled.img`
   width: 100%;
   height: auto;
+  display: block;
 `;
 
 const CardDescription = styled.div`
-  padding: 20px;
-  text-align: left;
+  position: absolute; // Position overlay over the image
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7); // Semi-transparent black background
+  color: white; // White text for contrast
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  opacity: 0; // Initially hidden
+  visibility: hidden; // Prevents it from being clickable when hidden
+  transition: opacity 0.3s ease, visibility 0.3s ease;
   font-family: "Montserrat", sans-serif;
+  text-align: center;
 
   h2 {
     margin: 0;
     font-size: 1.2em;
-    color: black;
+    color: white;
   }
 
   p {
-    color: #bbb;
+    margin: 10px 0 0;
     font-size: 0.9em;
   }
 `;
+
+const Container = styled.div`
+  margin-top: 150px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+  position: relative;
+  z-index: 1;
+  padding: 0 150px;
+`;
+
+// const Card = styled.div`
+//   flex: 1 1 calc(30% - 40px); // Ensures 3 cards per row with space between
+//   max-width: calc(30% - 40px);
+//   margin: 10px 20px; // Space between each card
+//   overflow: hidden;
+//   transition: transform 0.3s ease-in-out;
+
+//   &:hover {
+//     transform: scale(1.05);
+//   }
+
+//   @media (max-width: 1024px) {
+//     flex: 1 1 calc(50% - 30px); // Two cards per row on medium screens
+//     max-width: calc(50% - 30px);
+//   }
+
+//   @media (max-width: 768px) {
+//     flex: 1 1 calc(100% - 20px); // One card per row on small/mobile screens
+//     max-width: calc(100% - 20px);
+//   }
+// `;
+
+// const CardImage = styled.img`
+//   width: 100%;
+//   height: auto;
+// `;
+
+// const CardDescription = styled.div`
+//   padding: 20px;
+//   text-align: left;
+//   font-family: "Montserrat", sans-serif;
+
+//   h2 {
+//     margin: 0;
+//     font-size: 1.2em;
+//     color: black;
+//   }
+
+//   p {
+//     color: #bbb;
+//     font-size: 0.9em;
+//   }
+// `;
 
 const Music = () => {
   // Data for cards with imported images
@@ -115,7 +145,7 @@ const Music = () => {
       title: "Lux Interior",
       description: "Fabricio Mosoni",
       image: rummel13,
-      link: "",
+      link: "https://open.spotify.com/intl-es/album/1paUeA6llZyWSzcwg0Om3D?si=sR1Sf_hhQBioFhun4iScmg",
     },
     {
       id: 12,
@@ -207,11 +237,14 @@ const Music = () => {
   return (
     <Container>
       {albums.map((album) => (
-        <Card key={album.id}>
-          <a href={album.link} target="_blank" rel="noopener noreferrer">
-            <CardImage src={album.image} alt={album.title} />
-          </a>
-          {/* Text description is now outside of the clickable area */}
+        <Card
+          key={album.id}
+          as="a" // Use the styled Card component as a link
+          href={album.link}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <CardImage src={album.image} alt={album.title} />
           <CardDescription>
             <h2>{album.title}</h2>
             <p>{album.description}</p>
@@ -223,3 +256,18 @@ const Music = () => {
 };
 
 export default Music;
+
+// {
+//   albums.map((album) => (
+//     <Card key={album.id}>
+//       <a href={album.link} target="_blank" rel="noopener noreferrer">
+//         <CardImage src={album.image} alt={album.title} />
+//       </a>
+//       {/* Text description is now outside of the clickable area */}
+//       <CardDescription>
+//         <h2>{album.title}</h2>
+//         <p>{album.description}</p>
+//       </CardDescription>
+//     </Card>
+//   ));
+// }
