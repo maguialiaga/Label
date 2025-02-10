@@ -84,6 +84,7 @@ const CardDescription = styled.div`
 
 const Container = styled.div`
   margin-top: 150px;
+  margin-bottom: 50px;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -91,6 +92,13 @@ const Container = styled.div`
   position: relative;
   z-index: 1;
   padding: 0 150px;
+  @media (max-width: 1024px) {
+    padding: 0 100px;
+  }
+  @media (max-width: 768px) {
+    margin-top: 100px;
+    padding: 0 10px;
+  }
 `;
 
 // const Card = styled.div`

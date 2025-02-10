@@ -1,6 +1,6 @@
 import React, { useRef, useState } from "react";
 import {
-  ModalBackground,
+  Container,
   FormColumn,
   FormWrapper,
   FormInput,
@@ -13,15 +13,11 @@ import {
   FormTitle,
   FormSelect,
   TextArea,
-  Container,
-  Heading,
-  MobileIcon,
 } from "../components/BookFormStyles";
-import { FiX } from "react-icons/fi";
 import validateBookForm from "./Validate";
 import emailjs from "@emailjs/browser";
 
-const BookForm = ({ showModal, setShowModal }) => {
+const BookForm = () => {
   const [option, setOption] = useState("");
   const [email, setEmail] = useState("");
   const [event, setEvent] = useState("");
@@ -32,10 +28,6 @@ const BookForm = ({ showModal, setShowModal }) => {
   const [error, setError] = useState(null);
   const [success, setSuccess] = useState(null);
   const form = useRef();
-
-  const closeModal = () => {
-    setShowModal(false);
-  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -58,7 +50,7 @@ const BookForm = ({ showModal, setShowModal }) => {
     }
     emailjs
       .sendForm(
-        "service_vj6g3gd",
+        "service_jrm9xqc",
         "template_ntc50mp",
         form.current,
         "vRc98fB-F8s0iNWTT"
@@ -81,7 +73,6 @@ const BookForm = ({ showModal, setShowModal }) => {
     setMessage("");
     setError(null);
     setSuccess("Email was sent!");
-    // setShowModal(false);
   };
 
   const messageVariants = {
@@ -136,11 +127,8 @@ const BookForm = ({ showModal, setShowModal }) => {
     <FormSection>
       <Container>
         <FormRow>
-          <FormColumn small>
+          <FormColumn>
             <FormTitle>Booking Request</FormTitle>
-            <MobileIcon onClick={closeModal}>
-              <FiX style={{ color: "black" }} />
-            </MobileIcon>
             <FormWrapper ref={form} onSubmit={handleSubmit}>
               <FormInputRow key={3}>
                 <FormSelect
@@ -206,7 +194,6 @@ const BookForm = ({ showModal, setShowModal }) => {
           </FormColumn>
         </FormRow>
       </Container>
-      <Heading />
     </FormSection>
   );
 };

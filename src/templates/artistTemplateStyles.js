@@ -49,7 +49,7 @@ export const Container = styled.div`
   justify-content: center;
   align-items: flex-start; /* Align items to the top */
   height: 100vh;
-  padding: 20px; /* Adjust padding for smaller screens */
+  padding: 10px; /* Adjust padding for smaller screens */
 
   @media (min-width: 768px) {
     align-items: center; /* Center items for larger screens */
@@ -64,7 +64,7 @@ export const Left = styled.div`
   justify-content: center;
 
   @media only screen and (max-width: 480px) {
-    width: 100%;
+    width: 30%;
     height: 100%;
   }
 `;
@@ -104,7 +104,7 @@ export const Right = styled.div`
 
   @media (max-width: 768px) {
     margin-left: 1.5rem;
-    margin-top: 20rem;
+    margin-top: 25rem;
     max-height: calc(100vh - 200px); /* Adjust as necessary */
   }
 `;

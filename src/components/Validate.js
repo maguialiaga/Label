@@ -31,9 +31,9 @@ export default function validateBookForm({
     return "Date must be a valid date";
   }
 
-  if (offer === undefined || offer === null || isNaN(offer) || offer <= 0) {
-    return "Offer must be a valid number";
-  }
+  // if (offer === undefined || offer === null || isNaN(offer) || offer <= 0) {
+  //   return "Offer must be a valid number";
+  // }
 
   return null;
 }

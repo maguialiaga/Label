@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import Layout from "../components/Layout";
+import { Link } from "gatsby";
 import NavBar from "../components/NavBar";
 import {
   Wrapper,
@@ -20,18 +21,9 @@ import {
 import BookForm from "../components/BookForm";
 
 const ArtistTemplate = ({ pageContext }) => {
-  const { title, image, description, info, support } = pageContext.artist;
+  const { title, image, description, info, support, released } =
+    pageContext.artist;
   const backgroundImage = require(`../assets/images/${image}`);
-
-  const [showModal, setShowModal] = useState(false);
-
-  const openModal = () => {
-    setShowModal(true);
-  };
-
-  const closeModal = () => {
-    setShowModal(false);
-  };
 
   return (
     <Layout>
@@ -49,20 +41,19 @@ const ArtistTemplate = ({ pageContext }) => {
               <Desc>{description}</Desc>
 
               <Info>
-                <BioName>Released on</BioName>
                 {info}
+                <br></br>
+                <br></br>
+                <BioName>Released on</BioName>
+                {released}
                 <br></br>
                 <br></br>
                 <BioName>Supported by</BioName>
                 {support}
               </Info>
-
-              <Button onClick={openModal}>Booking request</Button>
-              {showModal && (
-                <Modal>
-                  <BookForm showModal={showModal} setShowModal={setShowModal} />
-                </Modal>
-              )}
+              <Link to={`/requests?artist=${title}`}>
+                <Button>Booking request</Button>
+              </Link>
             </Right>
             <Left></Left>
           </Container>

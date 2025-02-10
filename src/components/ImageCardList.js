@@ -22,6 +22,7 @@ const CardContainer = styled.div`
   align-items: center;
   position: relative;
   z-index: 1;
+  margin-bottom: 50px;
 `;
 
 const Card = styled.div`
