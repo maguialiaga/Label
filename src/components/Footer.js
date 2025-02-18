@@ -5,13 +5,13 @@ export const Container = styled.div`
   z-index: 1;
   width: 100%;
   max-width: 100%;
-  margin: 0 auto; /* Centra el contenido horizontalmente */
+  margin: 0 auto;
   padding: 0 50px;
   background-color: black;
-  height: 100px; /* Altura fija del footer */
+  height: 100px;
   display: flex;
   align-items: center;
-  justify-content: center; /* Centra el contenido del footer */
+  justify-content: center;
   font-family: "Montserrat", sans-serif;
   color: white;
 
@@ -21,7 +21,7 @@ export const Container = styled.div`
 `;
 
 const Footer = () => {
-  return <Container>© Aca van los iconos de ig y soundcloud</Container>;
+  return <Container></Container>;
 };
 
 export default Footer;

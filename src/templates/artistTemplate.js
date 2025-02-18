@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import Layout from "../components/Layout";
 import { Link } from "gatsby";
 import NavBar from "../components/NavBar";
+import { FaSpotify, FaInstagram, FaSoundcloud } from "react-icons/fa";
 import {
   Wrapper,
   Slide,
@@ -16,14 +17,32 @@ import {
   Desc,
   Info,
   BioName,
-  Modal,
+  SocialIcon,
+  SocialIconsWrapper,
 } from "./artistTemplateStyles";
-import BookForm from "../components/BookForm";
+// import BookForm from "../components/BookForm";
 
 const ArtistTemplate = ({ pageContext }) => {
-  const { title, image, description, info, support, released } =
-    pageContext.artist;
+  const {
+    title,
+    link,
+    image,
+    description,
+    info,
+    support,
+    released,
+    spotify,
+    instagram,
+    soundcloud,
+  } = pageContext.artist;
   const backgroundImage = require(`../assets/images/${image}`);
+
+  // Social Media Links Array
+  const socialLinks = [
+    { name: "Spotify", icon: <FaSpotify />, url: spotify },
+    { name: "Instagram", icon: <FaInstagram />, url: instagram },
+    { name: "SoundCloud", icon: <FaSoundcloud />, url: soundcloud },
+  ];
 
   return (
     <Layout>
@@ -39,21 +58,35 @@ const ArtistTemplate = ({ pageContext }) => {
             <Right>
               <Text>{title}</Text>
               <Desc>{description}</Desc>
-
               <Info>
                 {info}
-                <br></br>
-                <br></br>
+                <br />
+                <br />
                 <BioName>Released on</BioName>
                 {released}
-                <br></br>
-                <br></br>
+                <br />
+                <br />
                 <BioName>Supported by</BioName>
                 {support}
               </Info>
-              <Link to={`/requests?artist=${title}`}>
+              <Link to={"/requests"}>
                 <Button>Booking request</Button>
               </Link>
+              <SocialIconsWrapper>
+                {socialLinks.map(
+                  (link) =>
+                    link.url && (
+                      <SocialIcon
+                        key={link.name}
+                        href={link.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        {link.icon}
+                      </SocialIcon>
+                    )
+                )}
+              </SocialIconsWrapper>
             </Right>
             <Left></Left>
           </Container>

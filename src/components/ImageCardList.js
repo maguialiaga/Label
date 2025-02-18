@@ -39,6 +39,7 @@ const Card = styled.div`
 const CardImage = styled.img`
   width: 100%;
   height: auto;
+  object-fit: cover;
   display: block;
   transition: transform 0.3s ease-in-out;
 

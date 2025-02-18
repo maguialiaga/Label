@@ -91,7 +91,7 @@ exports.createPages = async ({ actions }) => {
         "https://open.spotify.com/intl-es/artist/4aUgXgIAcqvWeMjweQWTKy?si=RZBwmCCTThOfRFpn3d-hWA",
       instagram:
         "https://www.instagram.com/lastmenonearth_?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==",
-      soundcloud: "https://soundcloud.com/gespona",
+      soundcloud: "https://on.soundcloud.com/DGgbu7MdeuZJU3Hw5",
     },
   ];
 

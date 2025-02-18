@@ -73,20 +73,20 @@ export const Button = styled.button`
   margin-top: 20px;
   font-family: "Montserrat", sans-serif;
   border-radius: 4px;
-  background: none;
+  background-color: white;
   white-space: nowrap;
   padding: 10px 20px;
   font-size: 16px;
-  color: white;
+  color: black;
   outline: none;
   border: solid white;
   cursor: pointer;
 
   &:hover {
     transition: 0.3s ease;
-    background-color: white;
+    background: none;
     border: solid white;
-    color: black;
+    color: white;
   }
 
   @media only screen and (max-width: 480px) {
@@ -104,8 +104,18 @@ export const Right = styled.div`
 
   @media (max-width: 768px) {
     margin-left: 1.5rem;
-    margin-top: 25rem;
+    margin-top: 10rem;
     max-height: calc(100vh - 200px); /* Adjust as necessary */
+  }
+  @media (max-width: 600px) {
+    margin-left: 1.5rem;
+    margin-top: 25rem;
+    max-height: calc(100vh - 400px);
+  }
+  @media (max-width: 400px) {
+    margin-left: 1.5rem;
+    margin-top: 10rem;
+    max-height: calc(100vh - 400px);
   }
 `;
 
@@ -146,12 +156,12 @@ export const BioName = styled.h3`
 `;
 
 export const Info = styled.div`
-  margin-top: 50px;
+  margin-top: 30px;
   display: flex;
   flex-direction: column;
   align-items: left;
   padding: 20px;
-  max-width: 800px;
+  max-width: 600px;
   width: 100%;
   color: white;
   font-family: "Montserrat", sans-serif;
@@ -173,16 +183,28 @@ export const Info = styled.div`
   }
 `;
 
-export const Modal = styled.div`
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
+export const SocialIconsWrapper = styled.div`
   display: flex;
-  justify-content: center;
+  gap: 15px;
+  align-items: left;
+  justify-content: left;
+  margin-top: 15px;
+
+  @media (max-width: 600px) {
+    justify-content: left;
+    flex-wrap: wrap;
+  }
+`;
+
+export const SocialIcon = styled.a`
+  color: white;
+  font-size: 24px;
+  display: flex;
   align-items: center;
-  z-index: 1000;
-  overflow-y: auto;
+  justify-content: center;
+  transition: transform 0.2s ease-in-out;
+
+  &:hover {
+    transform: scale(1.1);
+  }
 `;

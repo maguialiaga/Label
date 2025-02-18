@@ -16,6 +16,8 @@ import rummel10 from "../assets/images/rummel_10.jpg";
 import rummel11 from "../assets/images/rummel_11.jpg";
 import rummel12 from "../assets/images/rummel_12.jpg";
 import rummel13 from "../assets/images/rummel_13.jpg";
+import rummel14 from "../assets/images/rummel_14.jpg";
+import rummel15 from "../assets/images/rummel_15.jpg";
 
 // Styled components
 const Card = styled.div`
@@ -101,53 +103,25 @@ const Container = styled.div`
   }
 `;
 
-// const Card = styled.div`
-//   flex: 1 1 calc(30% - 40px); // Ensures 3 cards per row with space between
-//   max-width: calc(30% - 40px);
-//   margin: 10px 20px; // Space between each card
-//   overflow: hidden;
-//   transition: transform 0.3s ease-in-out;
-
-//   &:hover {
-//     transform: scale(1.05);
-//   }
-
-//   @media (max-width: 1024px) {
-//     flex: 1 1 calc(50% - 30px); // Two cards per row on medium screens
-//     max-width: calc(50% - 30px);
-//   }
-
-//   @media (max-width: 768px) {
-//     flex: 1 1 calc(100% - 20px); // One card per row on small/mobile screens
-//     max-width: calc(100% - 20px);
-//   }
-// `;
-
-// const CardImage = styled.img`
-//   width: 100%;
-//   height: auto;
-// `;
-
-// const CardDescription = styled.div`
-//   padding: 20px;
-//   text-align: left;
-//   font-family: "Montserrat", sans-serif;
-
-//   h2 {
-//     margin: 0;
-//     font-size: 1.2em;
-//     color: black;
-//   }
-
-//   p {
-//     color: #bbb;
-//     font-size: 0.9em;
-//   }
-// `;
-
 const Music = () => {
   // Data for cards with imported images
   const albums = [
+    {
+      id: 14,
+      title: "Emotional Swing",
+      description: "Zakir",
+      description2: "(Incl. Thimble Remix)",
+      image: rummel15,
+      link: "https://open.spotify.com/intl-es/album/0EeCuLjIRmyU80jYbdYi0P?si=riBRjwlxQZW5sn9wPhv3eg",
+    },
+    {
+      id: 14,
+      title: "Panorama 2",
+      description:
+        "Abuk, Agustin Giri, Djolee, Gespona, Golden Hour, Last Men On Earth.",
+      image: rummel14,
+      link: "https://open.spotify.com/intl-es/album/0EeCuLjIRmyU80jYbdYi0P?si=riBRjwlxQZW5sn9wPhv3eg",
+    },
     {
       id: 13,
       title: "Lux Interior",
@@ -256,6 +230,7 @@ const Music = () => {
           <CardDescription>
             <h2>{album.title}</h2>
             <p>{album.description}</p>
+            <p>{album.description2}</p>
           </CardDescription>
         </Card>
       ))}
