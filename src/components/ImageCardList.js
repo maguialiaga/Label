@@ -14,6 +14,43 @@ const CardLink = styled(Link)`
   color: black;
 `;
 
+const Card = styled.div`
+  width: 400px;
+  margin: 15px;
+  overflow: hidden;
+  transition: transform 0.3s ease-in-out;
+
+  @media (max-width: 768px) {
+    width: 250px;
+  }
+`;
+
+const ImageWrapper = styled.div`
+  width: 100%;
+  height: 500px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
+
+const CardImage = styled.img`
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease-in-out;
+
+  ${Card}:hover & {
+    transform: scale(1.2);
+  }
+
+  @media (max-width: 768px) {
+    ${Card}:hover & {
+      transform: none;
+    }
+  }
+`;
+
 const CardContainer = styled.div`
   margin-top: 150px;
   display: flex;
@@ -25,33 +62,33 @@ const CardContainer = styled.div`
   margin-bottom: 50px;
 `;
 
-const Card = styled.div`
-  width: 400px;
-  margin: 15px;
-  overflow: hidden;
-  /* box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); */
-  transition: transform 0.3s ease-in-out;
-  @media (max-width: 768px) {
-    width: 250px;
-  }
-`;
+// const Card = styled.div`
+//   width: 400px;
+//   margin: 15px;
+//   overflow: hidden;
+//   /* box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); */
+//   transition: transform 0.3s ease-in-out;
+//   @media (max-width: 768px) {
+//     width: 250px;
+//   }
+// `;
 
-const CardImage = styled.img`
-  width: 100%;
-  height: auto;
-  object-fit: cover;
-  display: block;
-  transition: transform 0.3s ease-in-out;
+// const CardImage = styled.img`
+//   width: 100%;
+//   height: auto;
+//   object-fit: cover;
+//   display: block;
+//   transition: transform 0.3s ease-in-out;
 
-  ${Card}:hover & {
-    transform: scale(1.2);
-  }
-  @media (max-width: 768px) {
-    ${Card}:hover & {
-      transform: none;
-    }
-  }
-`;
+//   ${Card}:hover & {
+//     transform: scale(1.2);
+//   }
+//   @media (max-width: 768px) {
+//     ${Card}:hover & {
+//       transform: none;
+//     }
+//   }
+// `;
 
 const CardContent = styled.div`
   justify-content: center;
@@ -92,7 +129,9 @@ const ImageCard = ({ imageUrl, title, subtitle, description, link }) => {
     <>
       <CardLink to={`/artists/${link}`}>
         <Card>
-          <CardImage src={imageUrl} alt={title} />
+          <ImageWrapper>
+            <CardImage src={imageUrl} alt={title} />
+          </ImageWrapper>
           <CardContent>
             <CardTitle>{title}</CardTitle>
             <CardSubtitle>{subtitle}</CardSubtitle>
