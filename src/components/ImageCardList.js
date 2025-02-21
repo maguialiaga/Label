@@ -21,7 +21,8 @@ const Card = styled.div`
   transition: transform 0.3s ease-in-out;
 
   @media (max-width: 768px) {
-    width: 250px;
+    width: 300px;
+    height: 450px;
   }
 `;
 
@@ -32,6 +33,10 @@ const ImageWrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  @media (max-width: 768px) {
+    width: 300px;
+    height: 400px;
+  }
 `;
 
 const CardImage = styled.img`
@@ -62,51 +67,28 @@ const CardContainer = styled.div`
   margin-bottom: 50px;
 `;
 
-// const Card = styled.div`
-//   width: 400px;
-//   margin: 15px;
-//   overflow: hidden;
-//   /* box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); */
-//   transition: transform 0.3s ease-in-out;
-//   @media (max-width: 768px) {
-//     width: 250px;
-//   }
-// `;
-
-// const CardImage = styled.img`
-//   width: 100%;
-//   height: auto;
-//   object-fit: cover;
-//   display: block;
-//   transition: transform 0.3s ease-in-out;
-
-//   ${Card}:hover & {
-//     transform: scale(1.2);
-//   }
-//   @media (max-width: 768px) {
-//     ${Card}:hover & {
-//       transform: none;
-//     }
-//   }
-// `;
-
 const CardContent = styled.div`
-  justify-content: center;
+  display: flex;
+  flex-direction: column;
   align-items: center;
+  justify-content: center;
   padding: 10px;
+  text-align: center;
+  width: 100%;
 `;
 
 const CardTitle = styled.h3`
   font-family: "Montserrat", sans-serif;
   margin: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100%;
   font-weight: 500;
-  margin-bottom: 10px;
   font-size: 1.5rem;
+  text-align: center;
+  /* max-width: 100%; /* Prevents text overflow */
+  /* white-space: normal; /* Allows text to wrap */
+  /* word-break: break-word; Ensures wrapping on long words */
+  /* overflow-wrap: break-word;   */
 `;
+
 const CardSubtitle = styled.h4`
   font-family: "Montserrat", sans-serif;
   margin: 0;
@@ -133,9 +115,10 @@ const ImageCard = ({ imageUrl, title, subtitle, description, link }) => {
             <CardImage src={imageUrl} alt={title} />
           </ImageWrapper>
           <CardContent>
-            <CardTitle>{title}</CardTitle>
-            <CardSubtitle>{subtitle}</CardSubtitle>
-            <CardDescription>{description}</CardDescription>
+            {title && <CardTitle>{title}</CardTitle>}
+            {/* Ensure title is rendered */}
+            {subtitle && <CardSubtitle>{subtitle}</CardSubtitle>}
+            {description && <CardDescription>{description}</CardDescription>}
           </CardContent>
         </Card>
       </CardLink>
