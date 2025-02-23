@@ -29,11 +29,13 @@ export const FormSection = styled.div`
 
 export const FormTitle = styled.h1`
   margin-bottom: 50px;
+  margin-top: 40px;
   font-size: 35px;
   line-height: 1.1;
   font-weight: 600;
   @media screen and (max-width: 768px) {
     font-size: 20px;
+    margin-top: 40px;
   }
 `;
 

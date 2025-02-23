@@ -72,7 +72,7 @@ const NavMenu = styled.ul`
   @media screen and (max-width: 960px) {
     flex-direction: column;
     width: 100%;
-    height: 40vh;
+    height: 50vh;
     position: fixed;
     padding-top: 30%;
     top: 0;
@@ -168,9 +168,14 @@ const data = [
     id: "music",
   },
   {
-    to: "/shop",
-    text: "SHOP",
-    id: "shop",
+    to: "/masterclass",
+    text: "MASTERCLASS",
+    id: "masterclass",
+  },
+  {
+    to: "/events",
+    text: "EVENTS",
+    id: "events",
   },
 ];
 
