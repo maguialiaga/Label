@@ -86,6 +86,7 @@ export const FormMessage = styled(motion.div)`
 `;
 
 export const FormInputRow = styled.div`
+  font-family: "Montserrat", sans-serif;
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -109,6 +110,7 @@ export const FormInput = styled.input`
   font-size: 1rem;
 `;
 export const TextArea = styled.textarea`
+  font-family: "Montserrat", sans-serif;
   display: block;
   padding-left: 10px;
   outline: none;

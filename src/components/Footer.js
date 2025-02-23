@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
-import { FaInstagram, FaSpotify, FaSoundcloud } from "react-icons/fa"; // Import icons
+import { FaInstagram, FaSpotify, FaSoundcloud } from "react-icons/fa";
+import { SiBeatport } from "react-icons/si";
 
 const FooterContainer = styled.div`
   width: 100%;
@@ -20,7 +21,7 @@ const IconWrapper = styled.div`
 
 const IconLink = styled.a`
   color: white;
-  font-size: 28px;
+  font-size: 22px;
   transition: color 0.3s ease-in-out, transform 0.2s ease-in-out;
 
   &:hover {
@@ -58,6 +59,13 @@ const Footer = () => {
           rel="noopener noreferrer"
         >
           <FaSoundcloud />
+        </IconLink>
+        <IconLink
+          href="https://www.beatport.com/es/label/rummel/115146"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <SiBeatport />
         </IconLink>
       </IconWrapper>
     </FooterContainer>
