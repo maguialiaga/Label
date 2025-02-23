@@ -81,7 +81,7 @@ const CardTitle = styled.h3`
   font-family: "Montserrat", sans-serif;
   margin: 0;
   font-weight: 500;
-  font-size: 1.5rem;
+  font-size: 19px;
   text-align: center;
   /* max-width: 100%; /* Prevents text overflow */
   /* white-space: normal; /* Allows text to wrap */

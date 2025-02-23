@@ -33,9 +33,11 @@ const NavLogo = styled(Link)`
   align-items: center;
   z-index: 50;
   margin-left: 3rem;
+  margin-top: 20px;
   color: ${({ navColor }) => (navColor === "white" ? "white" : "black")};
   @media screen and (max-width: 960px) {
     margin-left: 1rem;
+    margin-top: 20px;
   }
 `;
 
@@ -90,7 +92,8 @@ const NavMenu = styled.ul`
 `;
 
 const NavItem = styled.li`
-  height: 80px;
+  height: 60px;
+  font-size: 14px;
   cursor: pointer;
   /* font-family: "Quicksand", sans-serif; */
   /* font-family: "Roboto Mono", monospace; */
@@ -147,33 +150,6 @@ const NavLinks = styled(Link)`
   }
 `;
 
-// const NavLinks = styled(Link)`
-//   /* color: black; */
-//   display: flex;
-//   font-weight: 500;
-//   align-items: center;
-//   text-decoration: none;
-//   padding: 0.5rem 1rem;
-//   height: 100%;
-//   color: ${({ navColor }) => (navColor === "white" ? "white" : "black")};
-//   &:hover {
-//     /* text-decoration: underline; */
-//     /* color: rgb(105, 105, 105); */
-//     /* transition: all 0.3s ease; */
-//   }
-//   @media screen and (max-width: 960px) {
-//     text-align: center;
-//     padding: 2rem;
-//     width: 100%;
-//     display: table;
-//     &:hover {
-//       /* text-decoration: underline; */
-//       /* color: rgb(105, 105, 105); */
-//       /* transition: all 0.3s ease; */
-//     }
-//   }
-// `;
-
 //DATA
 const data = [
   {
@@ -182,9 +158,19 @@ const data = [
     id: "artists",
   },
   {
+    to: "/requests",
+    text: "REQUEST",
+    id: "request",
+  },
+  {
     to: "/music",
     text: "MUSIC",
     id: "music",
+  },
+  {
+    to: "/shop",
+    text: "SHOP",
+    id: "shop",
   },
 ];
 

@@ -1,6 +1,6 @@
 // ArtistTemplate.js
 
-import React, { useState } from "react";
+import React from "react";
 import Layout from "../components/Layout";
 import { Link } from "gatsby";
 import NavBar from "../components/NavBar";

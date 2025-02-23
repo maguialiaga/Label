@@ -1,24 +1,5 @@
 import styled from "styled-components";
 
-// import { FaInstagram, FaSpotify, FaSoundcloud } from "react-icons/fa";
-
-//  spotify: {
-//         name: "Spotify",
-//         icon: iconStyle(FaSpotify),
-//         src: "https://open.spotify.com/artist/1HfGJTanZiMBHskJLQkRxL?si=PJYsWl9URV-hOgPKUCHagw",
-//       },
-//       instagram: {
-//         name: "Instagram",
-//         icon: iconStyle(FaInstagram),
-//         src: "https://www.instagram.com/djolee.music/",
-//       },
-//       soundcloud: {
-//         name: "SoundCloud",
-//         icon: iconStyle(FaSoundcloud),
-//         src: "https://soundcloud.com/djolee_music",
-//       },
-//     },
-
 export const Wrapper = styled.div`
   height: 100vh;
   display: flex;
@@ -120,7 +101,7 @@ export const Right = styled.div`
 `;
 
 export const Text = styled.h1`
-  font-family: "Montserrat", sans-serif;
+  font-family: "syne", sans-serif;
   color: white;
   font-size: 2rem;
   z-index: 1;
