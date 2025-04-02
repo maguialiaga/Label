@@ -68,10 +68,10 @@ exports.createPages = async ({ actions }) => {
       title: "GESPONA",
       link: "gespona",
       description: "DJ / PRODUCER",
-      info: "Stil Vor Talent, Rummel, Radikon, Multinotes",
-      released: "Stil Vor Talent, Rummel, Radikon, Multinotes",
+      info: "",
+      released: "Rummel, Diynamic, Siamese, Habitat, Stil Vor Talent",
       support:
-        "Solomun,Dixon, Mind Against,Laurent Garnier, Mano Le Tough, Âme, Vintage Culture, Trikk",
+        "Solomun, Dixon, Âme, Mind Against,Laurent Garnier, Mano Le Tough,Adriatique,Bedouin, Jimi Jules, Trikk",
       image: `gonCover.jpg`,
       spotify:
         "https://open.spotify.com/artist/59ewWwEHhZ0yq7SKXxUj0d?si=a6WhJSQNSNWNqw18dxGSEQ",
