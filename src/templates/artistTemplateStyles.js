@@ -101,7 +101,7 @@ export const Right = styled.div`
 `;
 
 export const Text = styled.h1`
-  font-family: "syne", sans-serif;
+  font-family: "Montserrat", sans-serif;
   color: white;
   font-size: 2rem;
   z-index: 1;

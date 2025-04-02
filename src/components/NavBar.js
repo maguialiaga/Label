@@ -167,16 +167,16 @@ const data = [
     text: "MUSIC",
     id: "music",
   },
-  {
-    to: "/masterclass",
-    text: "MASTERCLASS",
-    id: "masterclass",
-  },
-  {
-    to: "/events",
-    text: "EVENTS",
-    id: "events",
-  },
+  // {
+  //   to: "/masterclass",
+  //   text: "MASTERCLASS",
+  //   id: "masterclass",
+  // },
+  // {
+  //   to: "/events",
+  //   text: "EVENTS",
+  //   id: "events",
+  // },
 ];
 
 export default function Navbar({ navColor }) {

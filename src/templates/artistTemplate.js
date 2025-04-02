@@ -25,7 +25,7 @@ import {
 const ArtistTemplate = ({ pageContext }) => {
   const {
     title,
-    link,
+    // link,
     image,
     description,
     info,
