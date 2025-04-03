@@ -68,7 +68,7 @@ exports.createPages = async ({ actions }) => {
       title: "GESPONA",
       link: "gespona",
       description: "DJ / PRODUCER",
-      info: "",
+      // info: "",
       released: "Rummel, Diynamic, Siamese, Habitat, Stil Vor Talent",
       support:
         "Solomun, Dixon, Âme, Mind Against,Laurent Garnier, Mano Le Tough,Adriatique,Bedouin, Jimi Jules, Trikk",
