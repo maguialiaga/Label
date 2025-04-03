@@ -55,9 +55,9 @@ exports.createPages = async ({ actions }) => {
       link: "djolee",
       description: "DJ / PRODUCER",
       info: `Modern House/Techno DJ & Producer based in Barcelona. His artistic vision trascends genres, always striving to deliver a storytelling experience enriched with eclectic sounds`,
-      released: "Stil Vor Talent, Rummel, Radikon, Multinotes",
+      released: "Diynamic, Habitat, Stil Vor Talent, Rummel, Amancay",
       support:
-        "Dixon, Laurent Garnier, Mind Against, John Digweed, Adriatique, Trikk, Mano Le Tough, Who Made Who, Oliver Koletzki",
+        "Dixon, Laurent Garnier, Mind Against, John Digweed, Adriatique, Trikk, Mano Le Tough, Who Made Who",
       image: `nicoCover.jpg`,
       spotify:
         "https://open.spotify.com/intl-es/artist/1HfGJTanZiMBHskJLQkRxL?si=D41doooPSxeiWDG9mnS9PQ",
