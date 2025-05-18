@@ -25,6 +25,15 @@ export const Container = styled.div`
     padding-left: 30px;
   }
 `;
+export const AppWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+`;
+
+export const MainContent = styled.main`
+  flex: 1;
+`;
 
 // export const Container = styled.div`
 //   width: 100%;

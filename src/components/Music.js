@@ -18,6 +18,9 @@ import rummel12 from "../assets/images/rummel_12.jpg";
 import rummel13 from "../assets/images/rummel_13.jpg";
 import rummel14 from "../assets/images/rummel_14.jpg";
 import rummel15 from "../assets/images/rummel_15.jpg";
+import rummel16 from "../assets/images/rummel_16.jpg";
+import rummel17 from "../assets/images/rummel_17.jpg";
+import rummel18 from "../assets/images/rummel_18.jpg";
 
 // Styled components
 const Card = styled.div`
@@ -43,8 +46,8 @@ const Card = styled.div`
   }
 
   @media (max-width: 768px) {
-    flex: 1 1 calc(100% - 20px);
-    max-width: calc(100% - 20px);
+    flex: 1 1 calc(80% - 20px);
+    max-width: calc(80% - 20px);
   }
 `;
 
@@ -107,12 +110,34 @@ const Music = () => {
   // Data for cards with imported images
   const albums = [
     {
-      id: 14,
+      id: 18,
+      title: "Breathe",
+      description: "Schlepp Geist",
+      image: rummel18,
+      link: "https://open.spotify.com/intl-es/album/0EeCuLjIRmyU80jYbdYi0P?si=riBRjwlxQZW5sn9wPhv3eg",
+    },
+    {
+      id: 17,
+      title: "Around",
+      description: "Abuk",
+      image: rummel17,
+      link: "https://open.spotify.com/intl-es/album/11FWa3fq7Bx8o60t4Co3D5?si=cNwBox3ZSI2QsNUdECHV8w",
+    },
+    {
+      id: 16,
+      title: "Machines",
+      description: "Motip White",
+      description2: "(Incl. Djolee & Gespona Remix)",
+      image: rummel16,
+      link: "https://open.spotify.com/intl-es/album/2824u5VwmTCh1dlvmNussr?si=bqfCnUhkS4O3b4qYKCdZRg",
+    },
+    {
+      id: 15,
       title: "Emotional Swing",
       description: "Zakir",
       description2: "(Incl. Thimble Remix)",
       image: rummel15,
-      link: "https://open.spotify.com/intl-es/album/0EeCuLjIRmyU80jYbdYi0P?si=riBRjwlxQZW5sn9wPhv3eg",
+      link: "https://open.spotify.com/intl-es/album/6QTXfSuVLV8r9fFjdm5mHd?si=ovaLng1dQ_-Pb3nPhB8Z6w",
     },
     {
       id: 14,

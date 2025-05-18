@@ -167,6 +167,16 @@ const data = [
     text: "MUSIC",
     id: "music",
   },
+  {
+    to: "/shop",
+    text: "SHOP",
+    id: "shop",
+  },
+  {
+    to: "/tutorials",
+    text: "TUTORIALS",
+    id: "tutorials",
+  },
   // {
   //   to: "/masterclass",
   //   text: "MASTERCLASS",

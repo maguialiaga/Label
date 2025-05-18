@@ -144,6 +144,7 @@ const BookForm = () => {
                   <option value="Djolee">Djolee</option>
                   <option value="Gespona">Gespona</option>
                   <option value="Last Men On Earth">Last Men On Earth</option>
+                  <option value="Martin Cozar">Martin Cozar</option>
                 </FormSelect>
               </FormInputRow>
               {formData.map((el, index) => (

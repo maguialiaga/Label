@@ -7,6 +7,8 @@ import agus from "../assets/images/agus.jpg";
 import lastmen from "../assets/images/lastmen.jpg";
 import abuk from "../assets/images/abuk.jpg";
 
+import martin from "../assets/images/martin.jpg";
+
 import { Link } from "gatsby";
 
 const CardLink = styled(Link)`
@@ -160,6 +162,11 @@ const ImageCardList = () => {
       title: "LAST MEN ON EARTH",
       link: "lastmenonearth",
     },
+    // {
+    //   imageUrl: `${martin}`,
+    //   title: "MARTIN COZAR",
+    //   link: "martincozar",
+    // },
   ];
 
   return (
