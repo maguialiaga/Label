@@ -44,7 +44,7 @@ const TutorialsGrid = styled.div`
 const CardLink = styled.a`
   text-decoration: none;
   color: inherit;
-  border-radius: 5px;
+  /* border-radius: 5px; */
   overflow: hidden;
   background: white;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);

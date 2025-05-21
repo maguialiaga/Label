@@ -8,7 +8,7 @@ const ShopSection = styled.section`
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 40px;
-  padding: 100px 20px 80px;
+  padding: 100px 100px 58px;
   margin-top: 100px;
   margin-bottom: 100px;
   margin-right: 50px;
@@ -25,7 +25,7 @@ const ShopSection = styled.section`
 
 const ProductCard = styled.div`
   background: white;
-  border-radius: 10px;
+  /* border-radius: 10px; */
   padding: 20px;
   box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.07);
   display: flex;
@@ -41,6 +41,26 @@ const ProductImage = styled.img`
   background: white;
   border-radius: 8px;
 `;
+
+// const ProductCard = styled.div`
+//   background: white;
+//   padding: 15px;
+//   max-width: 410px; // <-- más angosta
+//   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.06);
+//   display: flex;
+//   flex-direction: column;
+//   align-items: center;
+//   margin: 0 auto; // <-- centrado
+// `;
+
+// const ProductImage = styled.img`
+//   width: 100%;
+//   max-width: 600px; // <-- imagen más pequeña
+//   height: auto;
+//   padding: 8px;
+//   background: white;
+//   border-radius: 6px;
+// `;
 
 const ProductInfo = styled.div`
   text-align: center;
