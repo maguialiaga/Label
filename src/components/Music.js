@@ -264,18 +264,3 @@ const Music = () => {
 };
 
 export default Music;
-
-// {
-//   albums.map((album) => (
-//     <Card key={album.id}>
-//       <a href={album.link} target="_blank" rel="noopener noreferrer">
-//         <CardImage src={album.image} alt={album.title} />
-//       </a>
-//       {/* Text description is now outside of the clickable area */}
-//       <CardDescription>
-//         <h2>{album.title}</h2>
-//         <p>{album.description}</p>
-//       </CardDescription>
-//     </Card>
-//   ));
-// }

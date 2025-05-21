@@ -8,7 +8,7 @@ const ShopSection = styled.section`
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 40px;
-  padding: 100px 20px 40px;
+  padding: 100px 20px 80px;
   margin-top: 100px;
   margin-bottom: 100px;
   margin-right: 50px;
