@@ -3,7 +3,28 @@ import styled from "styled-components";
 import blackCapImg from "../assets/images/black.jpg";
 import navyCapImg from "../assets/images/navy.jpg";
 import vinylImg from "../assets/images/vinyl2.jpg";
+import { useInView } from "react-intersection-observer";
+import { useAnimation } from "framer-motion";
+import { useEffect } from "react";
+import { motion } from "framer-motion";
 
+// const ShopSection = styled.section`
+//   display: grid;
+//   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+//   gap: 40px;
+//   padding: 100px 100px 58px;
+//   margin-top: 100px;
+//   margin-bottom: 100px;
+//   /* margin-right: 50px;
+//   margin-left: 50px; */
+//   background: white;
+//   font-family: "Montserrat", sans-serif;
+//   justify-items: center;
+//   @media screen and (max-width: 960px) {
+//     margin-top: 50px;
+//     margin-bottom: 50px;
+//   }
+// `;
 const ShopSection = styled.section`
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -11,27 +32,38 @@ const ShopSection = styled.section`
   padding: 100px 100px 58px;
   margin-top: 100px;
   margin-bottom: 100px;
-  margin-right: 50px;
-  margin-left: 50px;
   background: white;
   font-family: "Montserrat", sans-serif;
+  justify-items: center;
   @media screen and (max-width: 960px) {
-    margin-right: 10px;
-    margin-left: 10px;
     margin-top: 50px;
     margin-bottom: 50px;
+    padding: 100px 20px 58px;
   }
 `;
 
-const ProductCard = styled.div`
+const ProductCard = styled(motion.div)`
   background: white;
-  /* border-radius: 10px; */
   padding: 20px;
+  max-width: 340px;
+  width: 100%;
   box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.07);
   display: flex;
   flex-direction: column;
   align-items: center;
 `;
+// const ProductCard = styled(motion.div)`
+//   background: white;
+//   /* border-radius: 10px; */
+//   padding: 20px;
+//   box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.07);
+//   display: flex;
+//   flex-direction: column;
+//   align-items: center;
+//   @media screen and (max-width: 960px) {
+//     align-items: center;
+//   }
+// `;
 
 const ProductImage = styled.img`
   width: 100%;
@@ -99,6 +131,19 @@ const BuyButton = styled.a`
 `;
 
 const Shop = () => {
+  const initial = { opacity: 0, y: 30 };
+  const animation = useAnimation();
+
+  const { ref, inView } = useInView({ threshold: 0.2 });
+
+  useEffect(() => {
+    if (inView) {
+      animation.start({
+        opacity: 1,
+        y: 0,
+      });
+    }
+  }, [inView, animation]);
   const products = [
     {
       title: "Panorama 2 Vinyl",
@@ -121,9 +166,14 @@ const Shop = () => {
   ];
 
   return (
-    <ShopSection>
+    <ShopSection ref={ref}>
       {products.map((product, index) => (
-        <ProductCard key={index}>
+        <ProductCard
+          key={index}
+          initial={initial}
+          transition={{ delay: 0.3, duration: 0.6 }}
+          animate={animation}
+        >
           <ProductImage src={product.image} alt={product.title} />
           <ProductInfo>
             <ProductTitle>{product.title}</ProductTitle>

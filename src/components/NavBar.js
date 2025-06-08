@@ -72,7 +72,7 @@ const NavMenu = styled.ul`
   @media screen and (max-width: 960px) {
     flex-direction: column;
     width: 100%;
-    height: 50vh;
+    height: 60vh;
     position: fixed;
     padding-top: 30%;
     top: 0;
@@ -177,16 +177,6 @@ const data = [
     text: "TUTORIALS",
     id: "tutorials",
   },
-  // {
-  //   to: "/masterclass",
-  //   text: "MASTERCLASS",
-  //   id: "masterclass",
-  // },
-  // {
-  //   to: "/events",
-  //   text: "EVENTS",
-  //   id: "events",
-  // },
 ];
 
 export default function Navbar({ navColor }) {

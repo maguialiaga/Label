@@ -1,10 +1,13 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styled from "styled-components";
 import makumba from "../assets/images/makumba.png";
 import malabares from "../assets/images/malabares.png";
 import luxinterior from "../assets/images/luxinterior.png";
 import semuta from "../assets/images/semuta.png";
 import faderrr from "../assets/images/fader&stepout.png";
+import { useInView } from "react-intersection-observer";
+import { useAnimation } from "framer-motion";
+import { motion } from "framer-motion";
 
 const PageWrapper = styled.div`
   display: grid;
@@ -25,7 +28,7 @@ const PageWrapper = styled.div`
   }
 `;
 
-const TutorialsGrid = styled.div`
+const TutorialsGrid = styled(motion.div)`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 40px;
@@ -98,11 +101,32 @@ const tutorials = [
 ];
 
 const Tutorials = () => {
+  const initial = { opacity: 0, y: 30 };
+  const animation = useAnimation();
+
+  const { ref, inView } = useInView({ threshold: 0.2 });
+
+  useEffect(() => {
+    if (inView) {
+      animation.start({
+        opacity: 1,
+        y: 0,
+      });
+    }
+  }, [inView, animation]);
+
   return (
-    <PageWrapper>
-      <TutorialsGrid>
+    <PageWrapper ref={ref}>
+      <TutorialsGrid
+        initial={initial}
+        transition={{ delay: 0.3, duration: 0.6 }}
+        animate={animation}
+      >
         {tutorials.map((tutorial, index) => (
           <CardLink
+            initial={initial}
+            transition={{ delay: 0.3, duration: 0.6 }}
+            animate={animation}
             href={tutorial.link}
             key={index}
             target="_blank"

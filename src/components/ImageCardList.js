@@ -6,7 +6,6 @@ import jero from "../assets/images/jero.jpg";
 import agus from "../assets/images/agus.jpg";
 import lastmen from "../assets/images/lastmen.jpg";
 import abuk from "../assets/images/abuk.jpg";
-
 import martin from "../assets/images/martin.jpg";
 
 import { Link } from "gatsby";
@@ -130,6 +129,15 @@ const ImageCard = ({ imageUrl, title, subtitle, description, link }) => {
 
 const ImageCardList = () => {
   // Example data
+
+  const initial = {
+    y: 40,
+    opacity: 0,
+  };
+  const animate = {
+    y: 0,
+    opacity: 1,
+  };
   const cardsData = [
     {
       imageUrl: `${abuk}`,
@@ -162,11 +170,11 @@ const ImageCardList = () => {
       title: "LAST MEN ON EARTH",
       link: "lastmenonearth",
     },
-    // {
-    //   imageUrl: `${martin}`,
-    //   title: "MARTIN COZAR",
-    //   link: "martincozar",
-    // },
+    {
+      imageUrl: `${martin}`,
+      title: "MARTIN COZAR",
+      link: "martincozar",
+    },
   ];
 
   return (

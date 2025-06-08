@@ -107,7 +107,14 @@ const Container = styled.div`
 `;
 
 const Music = () => {
-  // Data for cards with imported images
+  const initial = {
+    y: 40,
+    opacity: 0,
+  };
+  const animate = {
+    y: 0,
+    opacity: 1,
+  };
   const albums = [
     {
       id: 18,

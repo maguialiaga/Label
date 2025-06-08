@@ -93,21 +93,21 @@ exports.createPages = async ({ actions }) => {
         "https://www.instagram.com/lastmenonearth_?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==",
       soundcloud: "https://on.soundcloud.com/DGgbu7MdeuZJU3Hw5",
     },
-    // {
-    //   title: "MARTIN COZAR",
-    //   link: "martincozar",
-    //   description: "DJ / PRODUCER",
-    //   info: "Musical endeavor made up of Eugenio Perez and Sebastian Passo with a unique sound fusing House and Techno.",
-    //   released: "TAU, Get Physical, Rummel, Amancay, Kiosk ID, Renaissance",
-    //   support:
-    //     "Dixon, Âme, Mano Le Tough, Damian Lazarus, Mind Against, John Digweed, Trikk, Echonomist",
-    //   image: `martinCover.jpg`,
-    //   spotify:
-    //     "https://open.spotify.com/intl-es/artist/2L7kud2OEMcErUcqhdpvAJ?si=4XdbhqjnQq--CkSuBakdwQ",
-    //   instagram:
-    //     "https://www.instagram.com/martin_cozar?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==",
-    //   soundcloud: "https://on.soundcloud.com/uW6vr6HDX4JnDUTg6",
-    // },
+    {
+      title: "MARTIN COZAR",
+      link: "martincozar",
+      description: "DJ / PRODUCER",
+      info: "Martin Cozar is a DJ known for his dynamic sets, seamlessly blending a wide range of genres to keep the crowd moving.",
+      released: "Rummel, Bedrock, Kiosk ID",
+      support:
+        "John Digweed, Elke Klejin, Hernan Cattaneo, Mira Kater, Shubostar",
+      image: `martinCover.jpg`,
+      spotify:
+        "https://open.spotify.com/intl-es/artist/2L7kud2OEMcErUcqhdpvAJ?si=4XdbhqjnQq--CkSuBakdwQ",
+      instagram:
+        "https://www.instagram.com/martin_cozar?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==",
+      soundcloud: "https://on.soundcloud.com/uW6vr6HDX4JnDUTg6",
+    },
   ];
 
   artistsData.forEach((artist) => {
