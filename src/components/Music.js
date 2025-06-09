@@ -1,8 +1,10 @@
-// src/Music.js
 import React from "react";
 import styled from "styled-components";
+import { useInView } from "react-intersection-observer";
+import { useAnimation } from "framer-motion";
+import { useEffect } from "react";
+import { motion } from "framer-motion";
 
-// Import images from the assets folder
 import rummel1 from "../assets/images/rummel_1.jpg";
 import rummel2 from "../assets/images/rummel_2.jpg";
 import rummel3 from "../assets/images/rummel_3.jpg";
@@ -23,7 +25,7 @@ import rummel17 from "../assets/images/rummel_17.jpg";
 import rummel18 from "../assets/images/rummel_18.jpg";
 
 // Styled components
-const Card = styled.div`
+const Card = styled(motion.div)`
   flex: 1 1 calc(30% - 40px);
   max-width: calc(30% - 40px);
   margin: 10px 20px;
@@ -107,14 +109,6 @@ const Container = styled.div`
 `;
 
 const Music = () => {
-  const initial = {
-    y: 40,
-    opacity: 0,
-  };
-  const animate = {
-    y: 0,
-    opacity: 1,
-  };
   const albums = [
     {
       id: 18,
@@ -248,15 +242,32 @@ const Music = () => {
     },
   ];
 
+  const initial = { opacity: 0, y: 30 };
+  const animation = useAnimation();
+
+  const { ref, inView } = useInView({ threshold: 0.2 });
+
+  useEffect(() => {
+    if (inView) {
+      animation.start({
+        opacity: 1,
+        y: 0,
+      });
+    }
+  }, [inView, animation]);
+
   return (
-    <Container>
+    <Container ref={ref}>
       {albums.map((album) => (
         <Card
-          key={album.id}
           as="a" // Use the styled Card component as a link
           href={album.link}
           target="_blank"
           rel="noopener noreferrer"
+          key={album.id}
+          initial={initial}
+          transition={{ delay: 0.3, duration: 0.6 }}
+          animate={animation}
         >
           <CardImage src={album.image} alt={album.title} />
           <CardDescription>

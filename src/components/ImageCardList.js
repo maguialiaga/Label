@@ -7,6 +7,10 @@ import agus from "../assets/images/agus.jpg";
 import lastmen from "../assets/images/lastmen.jpg";
 import abuk from "../assets/images/abuk.jpg";
 import martin from "../assets/images/martin.jpg";
+import { useInView } from "react-intersection-observer";
+import { useAnimation } from "framer-motion";
+import { useEffect } from "react";
+import { motion } from "framer-motion";
 
 import { Link } from "gatsby";
 
@@ -15,7 +19,7 @@ const CardLink = styled(Link)`
   color: black;
 `;
 
-const Card = styled.div`
+const Card = styled(motion.div)`
   width: 400px;
   margin: 15px;
   overflow: hidden;
@@ -108,10 +112,27 @@ const CardDescription = styled.p`
 `;
 
 const ImageCard = ({ imageUrl, title, subtitle, description, link }) => {
+  const initial = { opacity: 0, y: 30 };
+  const animation = useAnimation();
+
+  const { ref, inView } = useInView({ threshold: 0.2 });
+
+  useEffect(() => {
+    if (inView) {
+      animation.start({
+        opacity: 1,
+        y: 0,
+      });
+    }
+  }, [inView, animation]);
   return (
     <>
-      <CardLink to={`/artists/${link}`}>
-        <Card>
+      <CardLink to={`/artists/${link}`} ref={ref}>
+        <Card
+          initial={initial}
+          transition={{ delay: 0.3, duration: 0.6 }}
+          animate={animation}
+        >
           <ImageWrapper>
             <CardImage src={imageUrl} alt={title} />
           </ImageWrapper>
